@@ -24,7 +24,7 @@ const portfolioItems = [
   { id: 17, category: "Handtapping", src: "/portofolio/Portofolio17.JPG", alt: "Cultural Handtapping Tattoo Canggu Area" }
 ];
 
-const categories = ["All", "Handtapping", "Handpoke", "Machine", "Piercing"];
+const categories = ["All", "Handpoke", "Handtapping", "Machine", "Piercing"];
 
 export function PortfolioGallery() {
   const [activeFilter, setActiveFilter] = useState("All");

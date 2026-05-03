@@ -3,7 +3,7 @@ import { PortfolioGallery } from "@/components/ui/portfolio-gallery";
 // Metadata ini dibaca oleh Google saat merayapi halaman /portfolio
 export const metadata = {
   title: "Work Examples & Portfolio | Dotlinetattu Studio in Bali",
-  description: "Explore our gallery of traditional handtapping, handpoke, and custom machine tattoos by Silver Jerry at Dotlinetattu in Bali.",
+  description: "Explore our gallery of traditional handpoke, handtapping and custom machine tattoos by Silver Jerry at Dotlinetattu in Bali.",
 };
 
 export default function PortfolioPage() {
@@ -33,7 +33,7 @@ export default function PortfolioPage() {
             Menyisipkan Bali sebagai fokus utama, dan menargetkan Canggu, Ubud, Uluwatu, Denpasar
           */}
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-            A visual documentation of our journey in preserving traditional Indonesian tattoo art and embracing modern custom designs. Browse through our collection of Handtapping, Handpoke, and Machine tattoos crafted in our <strong className="text-white font-normal">BALI</strong> studio. Proudly welcoming art collectors from <strong className="text-white font-normal">Canggu, Ubud, Uluwatu, Denpasar</strong>, and beyond.
+            A visual documentation of our journey in preserving traditional Indonesian tattoo art and embracing modern custom designs. Browse through our collection of Handpoke, Handtapping and Machine tattoos crafted in our <strong className="text-white font-normal">BALI</strong> studio. Proudly welcoming art collectors from <strong className="text-white font-normal">Canggu, Ubud, Uluwatu, Denpasar</strong>, and beyond.
           </p>
         </div>
 
