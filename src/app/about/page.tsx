@@ -36,7 +36,7 @@ export default function AboutPage() {
               Menyisipkan Bali sebagai fokus utama, dan menargetkan Canggu, Ubud, Uluwatu, Denpasar
             */}
             <p>
-              Located in the artistic heart of <strong className="text-white font-normal">BALI</strong>, Dotlinetattu is an exclusive tattoo studio dedicated to preserving ancient body art. While nestled in a private, peaceful space, we proudly welcome clients traveling from <strong className="text-white font-normal">Canggu, Ubud, Uluwatu, Denpasar</strong>, and across the globe to experience authentic traditional Handpoke and Handtapping tattoos.
+              Located in the artistic heart of <strong className="text-white font-normal">BALI</strong>, Dotlinetattu is an Authentic and aesthetic tattoo studio dedicated to preserving ancient body art. While nestled in a private, peaceful space, we proudly welcome clients traveling from <strong className="text-white font-normal">Canggu, Ubud, Uluwatu, Denpasar</strong>, and across the globe to experience authentic traditional Handpoke and Handtapping tattoos.
             </p>
             <p>
               Our tattoo designs are deeply rooted in the traditions of Indonesian woven ornaments and interior carvings. We carefully develop and process these historical elements into highly personalized, custom tattoo art. A careful eye for body anatomy and a deep sensitivity to the tattooing process are our keys to unlocking the birthplace of every unique idea.
@@ -49,7 +49,7 @@ export default function AboutPage() {
           <div className="space-y-4">
             <h3 className="text-2xl font-graduated text-gingerbread">TRADITIONAL INK</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              As a specialist in Balinese tattoo culture, we offer authentic <strong>Handtapping</strong> and <strong>Handpoke</strong> techniques. This machine-free process is perfect for those seeking a deeply spiritual and traditional tattoo experience in Bali.
+              As a specialist in Balinese tattoo culture, we offer authentic <strong>Handpoke </strong> and <strong>Handtapping</strong> techniques. This machine-free process is perfect for those seeking a deeply spiritual and traditional tattoo experience in Bali.
             </p>
           </div>
           <div className="space-y-4">

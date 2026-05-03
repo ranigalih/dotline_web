@@ -10,7 +10,7 @@ export function Footer() {
         "@type": "TattooParlor",
         "name": "Dotlinetattu",
         "image": "https://dotlinetattu.com/logo.png",
-        "description": "Premium traditional and modern tattoo studio in Bali. Art by Silver Jerry.",
+        "description": "Premium traditional and modern tattoo studio in Bali. Dotlinetattu by Silver Jerry.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Dalung, Kuta Utara",

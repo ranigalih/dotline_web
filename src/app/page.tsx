@@ -5,6 +5,14 @@ import { Button } from "@/components/ui/button";
 import { useAudio } from "@/components/providers/audio-provider";
 
 const tattooServices = [
+    {
+    id: "handpoke",
+    title: "HANDPOKE",
+    subtitle: "Manual Precision",
+    locationLabel: "NORTH KUTA",
+    image: "/Handpoke.jpg",
+    description: "Searching for a precise, machine-free tattoo in Bali? Our handpoke tattoo process ensures minimal trauma to the skin while delivering incredibly detailed custom designs. It is the perfect choice for fine-line enthusiasts visiting Bali."
+  },
   {
     id: "handtapping",
     title: "HANDTAPPING",
@@ -14,16 +22,8 @@ const tattooServices = [
     description: "Experience the most authentic traditional tattoo in Bali with our signature Balinese Handtapping method. Rooted in ancient Indonesian heritage, our expert artists bring cultural storytelling to life using rhythmic tapping techniques right here near in Canggu."
   },
   {
-    id: "handpoke",
-    title: "HANDPOKE",
-    subtitle: "Manual Precision",
-    locationLabel: "NORTH KUTA",
-    image: "/Handpoke.jpg",
-    description: "Searching for a precise, machine-free tattoo in Bali? Our handpoke tattoo process ensures minimal trauma to the skin while delivering incredibly detailed custom designs. It is the perfect choice for fine-line enthusiasts visiting Bali."
-  },
-  {
-    id: "machine",
-    title: "CUSTOM MACHINE",
+    id: "tattooing",
+    title: "Tattooing",
     subtitle: "Modern Ink",
     locationLabel: "NEAR IN CANGGU",
     image: "/Machine.jpg",
@@ -71,11 +71,11 @@ export default function Home() {
           </h2>
           
           <h1 className="text-5xl sm:text-7xl md:text-[100px] lg:text-[120px] leading-[0.9] md:leading-none font-graduated mb-6 md:mb-8 animate-in slide-in-from-bottom duration-1000 delay-150">
-            ART BY <br /> <span className="text-gingerbread">SILVER JERRY</span>
+            Dotlinetattu by <br /> <span className="text-gingerbread">silver jerry</span>
           </h1>
           
           <p className="max-w-[90%] md:max-w-2xl text-muted-foreground mb-10 md:mb-12 animate-in fade-in duration-1000 delay-300 text-sm md:text-base leading-relaxed">
-            Bringing authentic traditional and modern tattoo art in Bali, just minutes from Canggu. Specializing in Balinese Handtapping, Handpoke, and Custom Machine designs.
+            Bringing authentic traditional and modern tattoo art in Bali, just minutes from Canggu. Specializing in Balinese Handpoke, Handtapping and Tattoo Machine On service.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto relative z-20 px-4 sm:px-0">
@@ -169,7 +169,7 @@ export default function Home() {
               */}
               <div className="text-muted-foreground leading-relaxed text-sm md:text-base pr-0 md:pr-10">
                 <p>
-                  Based in the artistic heart of <span className="text-white font-medium">BALI</span>, Dotlinetattu proudly welcomes clients from <span className="text-white font-medium">Canggu, Ubud, Uluwatu, Denpasar</span>, and across the globe. Experience authentic handtapping and world-class ink artistry in a premium, private setting.
+                  Based in the artistic heart of <span className="text-white font-medium">BALI</span>, Dotlinetattu proudly welcomes clients from <span className="text-white font-medium">Canggu, Ubud, Uluwatu, Denpasar</span>, and across the globe. Experience authentic tattoo  and world-class ink artistry in a premium, private setting.
                 </p>
               </div>
 

@@ -9,7 +9,7 @@ export const metadata = {
 // Data FAQ yang dioptimasi untuk SEO Lokal & Long-tail Keywords
 const faqs = [
   {
-    question: "What is the difference between Handtapping and Handpoke tattoos?",
+    question: "What is the difference between Handpoke and Handtapping tattoos?",
     answer: "Both are traditional, machine-free tattoo methods. Handtapping is an ancient Indonesian technique using a stick and a mallet to rhythmically tap the ink into the skin. Handpoke uses a single needle operated manually by the artist's hand for extreme precision. Both offer a deeply cultural and less traumatic healing experience, available right here at our Bali studio."
   },
   {
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "Does Handtapping hurt more than a machine tattoo?",
-    answer: "Most of our clients report that Handtapping and Handpoke actually hurt less than machine tattoos. Because the process is manual, it causes less trauma to the skin, resulting in less bleeding and a generally faster, more comfortable healing process."
+    answer: "Most of our clients report that Handpoke and Handtapping actually hurt less than machine tattoos. Because the process is manual, it causes less trauma to the skin, resulting in less bleeding and a generally faster, more comfortable healing process."
   }
 ];
 
