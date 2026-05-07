@@ -10,7 +10,7 @@ export function Footer() {
         "@type": "TattooParlor",
         "name": "Dotlinetattu",
         "image": "https://dotlinetattu.com/logo.png",
-        "description": "Premium traditional and modern tattoo studio in Bali. Dotlinetattu by Silver Jerry.",
+        "description": "Authentic traditional tattoo studio in bali",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Dalung, Kuta Utara",
@@ -34,16 +34,16 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                     
                     {/* 1. Brand Info & CTAs */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 text-left">
                         <h2 className="text-4xl font-graduated text-gingerbread">
                             Dotlinetattu 
                         </h2>
-                        <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
-                            Traditional Indonesian Tattoo Artistry. Rooted in culture, delivered with modern precision.
+                        <p className="text-muted-foreground text-sm max-w-xs leading-relaxed text-left">
+                            Authentic traditional tattoo studio in bali
                         </p>
                         
                         {/* Area Tombol Booking & Instagram */}
-                        <div className="flex flex-col gap-3 pt-2 max-w-xs">
+                        <div className="flex flex-col gap-3 pt-2 items-start max-w-xs">
                             <a 
                                 href="https://linkbio.co/Tattoo-Booking?utm_source=website&utm_medium=organic" 
                                 target="_blank" 

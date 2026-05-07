@@ -67,7 +67,7 @@ export default function Home() {
         
         <div className="container px-4 md:px-6 relative z-10 text-center flex flex-col items-center mt-12 md:mt-0">
           <h2 className="text-gingerbread font-medium tracking-widest uppercase mb-4 md:mb-6 block animate-in slide-in-from-bottom duration-700 text-[10px] md:text-xs">
-            Premium Traditional Tattoo Studio in Bali
+            Authentic traditional tattoo studio in bali
           </h2>
           
           <h1 className="text-5xl sm:text-7xl md:text-[100px] lg:text-[120px] leading-[0.9] md:leading-none font-graduated mb-6 md:mb-8 animate-in slide-in-from-bottom duration-1000 delay-150">

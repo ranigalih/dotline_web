@@ -19,10 +19,7 @@ export default function AboutPage() {
       <div className="container px-6 mx-auto max-w-6xl relative z-10">
         
         {/* SEO Header & Philosophy */}
-        <div className="text-center max-w-4xl mx-auto mb-24">
-          <span className="text-gingerbread font-medium tracking-[0.3em] text-xs uppercase mb-4 block">
-            The Philosophy of Ink
-          </span>
+       <div className="text-center max-w-4xl mx-auto mb-24">
           <h1 className="text-4xl md:text-6xl font-graduated mb-8 leading-tight">
             ABOUT <span className="text-gingerbread">Dotlinetattu</span>
           </h1>
@@ -84,7 +81,7 @@ export default function AboutPage() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 The creative force behind Dotlinetattu. Jerry specializes in translating ancient Indonesian motifs into breathtaking contemporary tattoos.
               </p>
-              <a href="https://instagram.com/silverjerry" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gingerbread hover:text-white transition-colors text-sm font-medium tracking-widest uppercase pt-4">
+              <a href="https://www.instagram.com/dotlinetattu?igsh=dmYxejk0cXN6c2d3" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gingerbread hover:text-white transition-colors text-sm font-medium tracking-widest uppercase pt-4">
                 <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="16" 
@@ -112,7 +109,7 @@ export default function AboutPage() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Through an electronic music approach rooted in traditional nuances, his presence adds a new layer to our video process. It is a meeting of two practices, uniting rhythm, atmosphere, and energy where sound and ink lines coexist simultaneously.
               </p>
-              <a href="https://instagram.com/ravana" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gingerbread hover:text-white transition-colors text-sm font-medium tracking-widest uppercase pt-4">
+              <a href="https://www.instagram.com/ra.va.na?igsh=MWd3N2JjanJiOWcwaw== " target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gingerbread hover:text-white transition-colors text-sm font-medium tracking-widest uppercase pt-4">
                 <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="16" 

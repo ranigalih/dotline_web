@@ -28,8 +28,15 @@ export function Navbar(){
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-white/10 py-4" : 'bg-transparent py-6'}`}>
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="text-3xl font-graduated text-gingerbread tracking-tighter">
-                    Dotlinetattu
+                <Link href="/" className="flex items-center gap-3">
+                    <img 
+                        src="/icon.jpg" 
+                        alt="Dotlinetattu Logo" 
+                        className="h-14 w-auto rounded-md border border-gingerbread/40 bg-gingerbread/10 p-1 shadow-[0_0_20px_rgba(184,92,56,0.15)]"
+                    />
+                    <span className="hidden sm:inline text-xl md:text-2xl font-graduated text-gingerbread tracking-tight">
+                        Dotlinetattu
+                    </span>
                 </Link>
                 {/* Dekstop menu */}
                 <div className="hidden lg:flex items-center gap-8">

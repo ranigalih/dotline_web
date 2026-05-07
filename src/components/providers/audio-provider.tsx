@@ -56,8 +56,8 @@ export function AudioProvider({ children } : { children: React.ReactNode }){
             <audio
                 ref={audioRef}
                 loop
-                src="/VoiceBackgroundDotline.mp4"
-                className="hidden"
+                src="/new-music.mp3.mp3"
+                className="hidden"                
             />
             {children}
             {/* Floating Audio Controller Globally */}

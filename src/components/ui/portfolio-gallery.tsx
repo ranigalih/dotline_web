@@ -24,16 +24,14 @@ const portfolioItems = [
   { id: 17, category: "Handtapping", src: "/portofolio/Portofolio17.JPG", alt: "Cultural Handtapping Tattoo Canggu Area" }
 ];
 
-const categories = ["All", "Handpoke", "Handtapping", "Machine", "Piercing"];
+const categories = ["Gallery"];
 
 export function PortfolioGallery() {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("Gallery");
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
   // Filter logika
-  const filteredItems = activeFilter === "All" 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === activeFilter);
+  const filteredItems = portfolioItems;
 
   return (
     <>
@@ -56,29 +54,35 @@ export function PortfolioGallery() {
 
       {/* CSS Masonry Grid */}
       {/* break-inside-avoid memastikan gambar tidak terpotong di tengah kolom */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-        {filteredItems.map((item) => (
-          <div 
-            key={item.id} 
-            className="break-inside-avoid relative group cursor-pointer overflow-hidden border border-white/10"
-            onClick={() => setLightboxImg(item.src)}
-          >
-            <img 
-              src={item.src} 
-              alt={item.alt} 
-              className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-              loading="lazy"
-            />
-            {/* Hover Overlay */}
-            <div className="absolute inset-0 bg-gingerbread/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <div className="text-white flex flex-col items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <ZoomIn size={32} />
-                <span className="text-[10px] tracking-widest uppercase">View Details</span>
+      {filteredItems.length > 0 ? (
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {filteredItems.map((item) => (
+            <div 
+              key={item.id} 
+              className="break-inside-avoid relative group cursor-pointer overflow-hidden border border-white/10"
+              onClick={() => setLightboxImg(item.src)}
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-full h-auto object-cover sepia-[0.3] brightness-110 contrast-105 group-hover:sepia-0 group-hover:brightness-100 group-hover:contrast-100 transition-all duration-700"
+                loading="lazy"
+              />
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gingerbread/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="text-white flex flex-col items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <ZoomIn size={32} />
+                  <span className="text-[10px] tracking-widest uppercase">View Details</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-16 text-center text-muted-foreground">
+          Portfolio items have been removed.
+        </div>
+      )}
 
       {/* Lightbox Overlay */}
       {lightboxImg && (

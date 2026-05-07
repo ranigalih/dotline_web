@@ -103,7 +103,7 @@ export default function FAQPage() {
                   <Clock className="text-white shrink-0" size={20} />
                   <div>
                     <strong className="block text-white font-medium mb-1 tracking-wider uppercase text-xs">Operating Hours</strong>
-                    <p className="text-sm leading-relaxed">By Appointment Only<br/>Please book in advance.</p>
+                    <p className="text-sm leading-relaxed">Book your appointment in advance</p>
                   </div>
                 </div>
               </div>

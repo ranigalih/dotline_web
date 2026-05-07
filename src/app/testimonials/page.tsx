@@ -41,7 +41,7 @@ export default function TestimonialPage() {
 
         {/* Call to Action Bawah */}
         <div className="text-center mt-24 pt-16 border-t border-white/10 max-w-2xl mx-auto">
-          <h3 className="text-3xl font-graduated mb-6 text-white">READY TO TELL YOUR STORY?</h3>
+          <h3 className="text-3xl font-graduated mb-6 text-white">READY TO SHARE YOUR STORY?</h3>
           <p className="text-muted-foreground mb-8 text-sm">
             Join hundreds of satisfied clients. Secure your appointment for a custom tattoo session today.
           </p>

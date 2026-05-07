@@ -12,14 +12,14 @@ const apprenticesData = [
     role: "Tattoo Apprentice",
     image: "/jessica.jpg", // Siapkan gambar
     description: "Demonstrating extraordinary natural talent and dedication, Jessica achieved her status as an official tattoo apprentice at Dotlinetattu in a remarkably short time of just 2 weeks. Focusing on precision and traditional aesthetics, she is rapidly mastering the fundamental techniques of professional tattooing right here in our Bali studio.",
-    instagram: "https://instagram.com/dotlinetattu"
+
   },
   {
     name: "FADLAN NANTO",
     role: "Tattoo Apprentice / Fine Arts",
     image: "/fadlan.jpg", // Siapkan gambar
     description: "Bringing a strong academic foundation to the world of ink, Fadlan became a tattoo apprentice directly from his background at the prestigious Indonesian Institute of Arts (ISI). His deep understanding of visual arts, anatomy, and cultural motifs allows him to bring a unique, fine-art perspective to his custom tattoo designs in Bali.",
-    instagram: "https://instagram.com/dotlinetattu"
+  
   }
 ];
 
@@ -85,30 +85,6 @@ export default function ApprenticesPage() {
                 {apprentice.description}
               </p>
 
-              <div className="pt-4">
-                <a 
-                  href={apprentice.instagram} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:border-gingerbread hover:text-gingerbread transition-colors text-xs tracking-[0.2em] uppercase font-medium"
-                >
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    >
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                    </svg> View Portfolio
-                </a>
-              </div>
             </div>
 
           </div>
@@ -117,7 +93,7 @@ export default function ApprenticesPage() {
 
       {/* CTA Bottom */}
       <div className="container px-6 mx-auto max-w-4xl text-center mt-32 pt-16 border-t border-white/10 relative z-10">
-        <h3 className="text-2xl font-graduated mb-6">WANT TO GET TATTOOED BY OUR APPRENTICES?</h3>
+        <h3 className="text-2xl font-graduated mb-6">Who’s next apprentice</h3>
         <p className="text-muted-foreground text-sm mb-8">
           Apprentice tattoos are done under the strict supervision of our senior artists at special rates. Contact us to check their availability.
         </p>
