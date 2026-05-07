@@ -14,10 +14,10 @@ const graduatedFont = localFont({
 export const metadata: Metadata = {
   title: 'Dotlinetattu | Dotlinetattu by Silver Jerry',
   description: 'Authentic traditional tattoo studio in bali.',
-  // Menambahkan logo.jpg sebagai favicon utama dan Apple Touch Icon
+  // Menambahkan logo.svg sebagai favicon utama dan Apple Touch Icon
   icons: {
-    icon: '/icon.jpg',
-    apple: '/icon.jpg', 
+    icon: '/Icon.png',
+    apple: '/Icon.png', 
   },
 };
 

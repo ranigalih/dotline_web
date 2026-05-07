@@ -5,23 +5,28 @@ import { X, ZoomIn } from "lucide-react";
 
 // Mock Data Portfolio (Anda bisa menambahkannya nanti)
 const portfolioItems = [
-  { id: 1, category: "Handtapping", src: "/portofolio/Portofolio1.JPG", alt: "Traditional Handtapping Tattoo in Bali" },
-  { id: 2, category: "Machine", src: "/portofolio/Portofolio2.JPG", alt: "Custom Black and Grey Machine Tattoo Canggu" },
-  { id: 3, category: "Handpoke", src: "/portofolio/Portofolio3.JPG", alt: "Minimalist Handpoke Tattoo Art Bali" },
-  { id: 4, category: "Handtapping", src: "/portofolio/Portofolio4.JPG", alt: "Professional Body Piercing North Kuta" },
-  { id: 5, category: "Handtapping", src: "/portofolio/Portofolio5.JPG", alt: "Balinese Motif Handtapping Tattoo" },
-  { id: 6, category: "Machine", src: "/portofolio/Portofolio6.JPG", alt: "Neo Traditional Color Tattoo Bali" },
-  { id: 7, category: "Handpoke", src: "/portofolio/Portofolio7.JPG", alt: "Fine Line Handpoke Tattoo in Bali" },
-  { id: 8, category: "Handpoke", src: "/portofolio/Portofolio8.JPG", alt: "Safe Piercing Studio near Canggu" },
-  { id: 9, category: "Handtapping", src: "/portofolio/Portofolio9.JPG", alt: "Authentic Indonesian Tattoo Ritual" },
-  { id: 10, category: "Machine", src: "/portofolio/Portofolio10.JPG", alt: "Black and Grey Realism Tattoo Bali" },
-  { id: 11, category: "Handpoke", src: "/portofolio/Portofolio11.JPG", alt: "Custom Handpoke Design in Bali" },
-  { id: 12, category: "Handpoke", src: "/portofolio/Portofolio12.JPG", alt: "Ear and Body Piercing Bali" },
-  { id: 13, category: "Handtapping", src: "/portofolio/Portofolio13.JPG", alt: "Dotlinetattu Traditional Ink" },
-  { id: 14, category: "Machine", src: "/portofolio/Portofolio14.JPG", alt: "Premium Machine Tattoo Artist Bali" },
-  { id: 15, category: "Handpoke", src: "/portofolio/Portofolio15.JPG", alt: "Handpoke Tattoo Session in Bali" },
-  { id: 16, category: "Handpoke", src: "/portofolio/Portofolio16.JPG", alt: "Piercing Jewelry Dotlinetattu" },
-  { id: 17, category: "Handtapping", src: "/portofolio/Portofolio17.JPG", alt: "Cultural Handtapping Tattoo Canggu Area" }
+  { id: 1, category: "Gallery", src: "/portofolio/Portofolio 1.jpeg", alt: "Dotlinetattu Portfolio Photo 1" },
+  { id: 2, category: "Gallery", src: "/portofolio/Portofolio 2.jpeg", alt: "Dotlinetattu Portfolio Photo 2" },
+  { id: 3, category: "Gallery", src: "/portofolio/Portofolio 3.jpeg", alt: "Dotlinetattu Portfolio Photo 3" },
+  { id: 4, category: "Gallery", src: "/portofolio/Portofolio 4.jpeg", alt: "Dotlinetattu Portfolio Photo 4" },
+  { id: 5, category: "Gallery", src: "/portofolio/Portofolio 6.jpeg", alt: "Dotlinetattu Portfolio Photo 6" },
+  { id: 6, category: "Gallery", src: "/portofolio/Portofolio 7.jpeg", alt: "Dotlinetattu Portfolio Photo 7" },
+  { id: 7, category: "Gallery", src: "/portofolio/Portofolio 8.jpeg", alt: "Dotlinetattu Portfolio Photo 8" },
+  { id: 8, category: "Gallery", src: "/portofolio/Portofolio 9.jpeg", alt: "Dotlinetattu Portfolio Photo 9" },
+  { id: 9, category: "Gallery", src: "/portofolio/Portofolio 10.jpeg", alt: "Dotlinetattu Portfolio Photo 10" },
+  { id: 10, category: "Gallery", src: "/portofolio/Portofolio 11.jpeg", alt: "Dotlinetattu Portfolio Photo 11" },
+  { id: 11, category: "Gallery", src: "/portofolio/Portofolio 13.jpeg", alt: "Dotlinetattu Portfolio Photo 13" },
+  { id: 12, category: "Gallery", src: "/portofolio/Portofolio 15.jpeg", alt: "Dotlinetattu Portfolio Photo 15" },
+  { id: 13, category: "Gallery", src: "/portofolio/Portofolio 16.jpeg", alt: "Dotlinetattu Portfolio Photo 16" },
+  { id: 14, category: "Gallery", src: "/portofolio/Portofolio 17.jpeg", alt: "Dotlinetattu Portfolio Photo 17" },
+  { id: 15, category: "Gallery", src: "/portofolio/Portofolio 18.jpeg", alt: "Dotlinetattu Portfolio Photo 18" },
+  { id: 16, category: "Gallery", src: "/portofolio/Portofolio 19.jpeg", alt: "Dotlinetattu Portfolio Photo 19" },
+  { id: 17, category: "Gallery", src: "/portofolio/Portofolio 20.jpeg", alt: "Dotlinetattu Portfolio Photo 20" },
+  { id: 18, category: "Gallery", src: "/portofolio/Portofolio 21.jpeg", alt: "Dotlinetattu Portfolio Photo 21" },
+  { id: 19, category: "Gallery", src: "/portofolio/Portofolio 22.jpeg", alt: "Dotlinetattu Portfolio Photo 22" },
+  { id: 20, category: "Gallery", src: "/portofolio/Portofolio 23.jpeg", alt: "Dotlinetattu Portfolio Photo 23" },
+  { id: 21, category: "Gallery", src: "/portofolio/Portofolio 24.jpg", alt: "Dotlinetattu Portfolio Photo 24" },
+  { id: 22, category: "Gallery", src: "/portofolio/Portofolio 25.jpg", alt: "Dotlinetattu Portfolio Photo 25" }
 ];
 
 const categories = ["Gallery"];

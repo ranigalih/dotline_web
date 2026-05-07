@@ -102,7 +102,7 @@ export function Footer() {
                                 <p>Dalung, Kuta Utara<br />Kabupaten Badung, Bali</p>
                             </div>
                             <p className="text-xs text-muted-foreground mt-4 italic">
-                                *By appointment only. Please book your consultation online.
+                                Book your appointment in advance
                             </p>
                         </div>
                     </div>

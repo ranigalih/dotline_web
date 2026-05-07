@@ -26,44 +26,48 @@ export function Navbar(){
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-white/10 py-4" : 'bg-transparent py-6'}`}>
-            <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-3">
-                    <img 
-                        src="/icon.jpg" 
-                        alt="Dotlinetattu Logo" 
-                        className="h-14 w-auto rounded-md border border-gingerbread/40 bg-gingerbread/10 p-1 shadow-[0_0_20px_rgba(184,92,56,0.15)]"
-                    />
-                    <span className="hidden sm:inline text-xl md:text-2xl font-graduated text-gingerbread tracking-tight">
-                        Dotlinetattu
-                    </span>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 min-h-[7.5rem] ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-white/10" : 'bg-transparent'}`}>
+            <div className="absolute top-0 left-0 z-0 pointer-events-none opacity-60">
+                <img
+                    src="/Icon.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="h-[7.5rem] w-auto"
+                />
+            </div>
+            <div className="relative z-10 container mx-auto px-6 h-[7.5rem]">
+                <Link href="/" className="absolute bottom-3 left-6 z-20 text-4xl md:text-5xl font-graduated text-gingerbread tracking-tight">
+                    Dotlinetattu
                 </Link>
-                {/* Dekstop menu */}
-                <div className="hidden lg:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-[11px] font-medium tracking-[0.2em] text-white/80 hover:text-gingerbread transition-colors"
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                <div className="absolute inset-x-0 top-1/2 z-20 flex -translate-y-1/2 items-center justify-center gap-8">
+                    <div className="hidden lg:flex items-center gap-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="text-[11px] font-medium tracking-[0.2em] text-white/80 hover:text-gingerbread transition-colors"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </div>
+                    <div className="hidden lg:block">
+                        <a href="https://linkbio.co/Tattoo-Booking?utm_source=website&utm_medium=organic" target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline" className="rounded-none border-gingerbread text-gingerbread hover:bg-gingerbread hover:text-white text-[10px] tracking-widest h-9 px-6">
+                                BOOK NOW
+                            </Button>
+                        </a>
+                    </div>
                 </div>
-                <div className="hidden lg:block">
-                    <a href="https://linkbio.co/Tattoo-Booking?utm_source=website&utm_medium=organic" target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" className="rounded-none border-gingerbread text-gingerbread hover:bg-gingerbread hover:text-white text-[10px] tracking-widest h-9 px-6">
-                            BOOK NOW
-                        </Button>
-                    </a>
+                <div className="flex items-center justify-between h-full">
+                    <div />
+                    <button 
+                        className="lg:hidden text-white"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >   
+                        {mobileMenuOpen ? <X size={28} /> : <Menu size={28}/>}
+                    </button>
                 </div>
-                {/* Mobile Hambunger toggle */}
-                <button 
-                    className="lg:hidden text-white"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >   
-                    {mobileMenuOpen ? <X size={28} /> : <Menu size={28}/>}
-                </button>
             </div>
             {/* Mobile Menu DropDown */}
             {mobileMenuOpen && (

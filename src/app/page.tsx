@@ -10,7 +10,7 @@ const tattooServices = [
     title: "HANDPOKE",
     subtitle: "Manual Precision",
     locationLabel: "NORTH KUTA",
-    image: "/Handpoke.jpg",
+    image: "/Handpoke.JPG",
     description: "Searching for a precise, machine-free tattoo in Bali? Our handpoke tattoo process ensures minimal trauma to the skin while delivering incredibly detailed custom designs. It is the perfect choice for fine-line enthusiasts visiting Bali."
   },
   {
