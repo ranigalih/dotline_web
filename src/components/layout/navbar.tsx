@@ -27,7 +27,7 @@ export function Navbar(){
     }, []);
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 min-h-[7.5rem] ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-white/10" : 'bg-transparent'}`}>
-            <div className="absolute top-0 left-0 z-10 pointer-events-none opacity-60">
+            <div className="absolute top-0 left- z-10 pointer-events-none opacity-60">
                 <img
                     src="/Icon.png"
                     alt=""
@@ -36,11 +36,11 @@ export function Navbar(){
                 />
             </div>
             <div className="relative z-20 container mx-auto px-6 h-[7.5rem]">
-                <Link href="/" className="absolute bottom-2 left-8 z-0 text-4xl md:text-5xl font-graduated text-gingerbread tracking-tight">
-                    Dotlinetattu
+                <Link href="/" className="absolute bottom-2 left-9 z-0 text-4xl md:text-5xl font-graduated text-gingerbread tracking-tight">
+                    
                 </Link>
-                <div className="absolute top-1/2 left-1/2 z-20 flex -translate-y-1/2 translate-x-8 items-center justify-center gap-8 lg:translate-x-16">
-                    <div className="hidden lg:flex items-center gap-8">
+                <div className="absolute top-1/2 left-1/2 z-20 flex -translate-y-1/2 translate-x-1 items-left justify-left gap-1 lg:translate-x-1">
+                    <div className="hidden lg:flex items-center gap-6">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
