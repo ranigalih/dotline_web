@@ -93,7 +93,7 @@ export default function ApprenticesPage() {
 
       {/* CTA Bottom */}
       <div className="container px-6 mx-auto max-w-4xl text-center mt-32 pt-16 border-t border-white/10 relative z-10">
-        <h3 className="text-2xl font-graduated mb-6">Who’s next apprentice</h3>
+        <h3 className="text-2xl font-graduated mb-6">The next apprentice could it be you?</h3>
         <p className="text-muted-foreground text-sm mb-8">
           Apprentice tattoos are done under the strict supervision of our senior artists at special rates. Contact us to check their availability.
         </p>

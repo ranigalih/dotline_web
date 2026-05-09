@@ -17,7 +17,7 @@ export function Footer() {
             "addressRegion": "Bali",
             "addressCountry": "ID"
         },
-        "telephone": "+628xxxxxxxxx", // Jangan lupa isi dengan nomor WhatsApp asli
+        "telephone": "+62 877-7527-3111", // Jangan lupa isi dengan nomor WhatsApp asli
         "url": "https://dotlinetattu.com" 
     };
 
@@ -50,7 +50,7 @@ export function Footer() {
                                 rel="noopener noreferrer" 
                                 className="bg-gingerbread hover:bg-[#9A4C2E] text-white px-6 py-3.5 text-xs tracking-[0.2em] uppercase text-center font-medium transition-colors"
                             >
-                                Book Free Consultation
+                                Book a Private Consultation
                             </a>
                             <a 
                                 href="https://www.instagram.com/dotlinetattu/" 
@@ -111,7 +111,7 @@ export function Footer() {
 
                 {/* BOTTOM BAR */}
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-wider text-white/40">
-                    <p>&copy; {currentYear} Dotlinetattu. All rights reserved.</p>
+                    <p>&copy; {2018} Dotlinetattu. All rights reserved.</p>
                     <p>Designed by @silverjery___</p>
                 </div>
                 

@@ -6,8 +6,9 @@ import { X, ZoomIn } from "lucide-react";
 // Mock Data Portfolio (Anda bisa menambahkannya nanti)
 const portfolioItems = [
   { id: 1, category: "Gallery", src: "/portfolio/portfolio-1.jpg", alt: "Dotlinetattu Portfolio Photo 1" },
+  // Perbaikan ID 2: Tadi ada titik di akhir ".jpg." (sudah dihapus)
   { id: 2, category: "Gallery", src: "/portfolio/portfolio-2.jpg", alt: "Dotlinetattu Portfolio Photo 2" },
-  { id: 3, category: "Gallery", src: "//portfolio/portfolio-3.jpg", alt: "Dotlinetattu Portfolio Photo 3" },
+  { id: 3, category: "Gallery", src: "/portfolio/portfolio-3.jpg", alt: "Dotlinetattu Portfolio Photo 3" },
   { id: 4, category: "Gallery", src: "/portfolio/portfolio-4.jpg", alt: "Dotlinetattu Portfolio Photo 4" },
   { id: 5, category: "Gallery", src: "/portfolio/portfolio-5.jpg", alt: "Dotlinetattu Portfolio Photo 5" },
   { id: 6, category: "Gallery", src: "/portfolio/portfolio-6.jpg", alt: "Dotlinetattu Portfolio Photo 6" },

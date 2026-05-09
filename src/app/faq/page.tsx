@@ -26,7 +26,7 @@ const faqs = [
     answer: "You can secure your spot by clicking the 'Book Consultation' button which will direct you to our official booking form. Since we operate mainly by appointment to maintain exclusivity and focus, we highly recommend booking your session in advance. Our studio is strategically located to warmly welcome clients traveling from Canggu, Ubud, Uluwatu, Denpasar, and across the globe."
   },
   {
-    question: "Does Handtapping hurt more than a machine tattoo?",
+    question: "Do Handpoke and Handtapping tattoos hurt more than machine tattoos?",
     answer: "Most of our clients report that Handpoke and Handtapping actually hurt less than machine tattoos. Because the process is manual, it causes less trauma to the skin, resulting in less bleeding and a generally faster, more comfortable healing process."
   }
 ];
