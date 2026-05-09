@@ -5,28 +5,18 @@ import { X, ZoomIn } from "lucide-react";
 
 // Mock Data Portfolio (Anda bisa menambahkannya nanti)
 const portfolioItems = [
-  { id: 1, category: "Gallery", src: "/portfolio/portfolio-1.jpg", alt: "Dotlinetattu Portfolio Photo 1" },
+  { id: 1, category: "Gallery", src: "/portfolio/portfolio-1.jpeg", alt: "Dotlinetattu Portfolio Photo 1" },
   // Perbaikan ID 2: Tadi ada titik di akhir ".jpg." (sudah dihapus)
-  { id: 2, category: "Gallery", src: "/portfolio/portfolio-2.jpg", alt: "Dotlinetattu Portfolio Photo 2" },
-  { id: 3, category: "Gallery", src: "/portfolio/portfolio-3.jpg", alt: "Dotlinetattu Portfolio Photo 3" },
-  { id: 4, category: "Gallery", src: "/portfolio/portfolio-4.jpg", alt: "Dotlinetattu Portfolio Photo 4" },
-  { id: 5, category: "Gallery", src: "/portfolio/portfolio-5.jpg", alt: "Dotlinetattu Portfolio Photo 5" },
-  { id: 6, category: "Gallery", src: "/portfolio/portfolio-6.jpg", alt: "Dotlinetattu Portfolio Photo 6" },
-  { id: 7, category: "Gallery", src: "/portfolio/portfolio-7.jpg", alt: "Dotlinetattu Portfolio Photo 7" },
-  { id: 8, category: "Gallery", src: "/portfolio/portfolio-8.jpg", alt: "Dotlinetattu Portfolio Photo 8" },
-  { id: 9, category: "Gallery", src: "/portfolio/portfolio-9.jpg", alt: "Dotlinetattu Portfolio Photo 9" },
-  { id: 10, category: "Gallery", src: "/portfolio/portfolio-10.jpg", alt: "Dotlinetattu Portfolio Photo 10" },
-  { id: 11, category: "Gallery", src: "/portfolio/portfolio-11.jpg", alt: "Dotlinetattu Portfolio Photo 11" },
-  { id: 12, category: "Gallery", src: "/portfolio/portfolio-12.jpg", alt: "Dotlinetattu Portfolio Photo 12" },
-  { id: 13, category: "Gallery", src: "/portfolio/portfolio-13.jpg", alt: "Dotlinetattu Portfolio Photo 13" },
-  { id: 14, category: "Gallery", src: "/portfolio/portfolio-14.jpg", alt: "Dotlinetattu Portfolio Photo 14" },
-  { id: 15, category: "Gallery", src: "/portfolio/portfolio-15.jpg", alt: "Dotlinetattu Portfolio Photo 15" },
-  { id: 16, category: "Gallery", src: "/portfolio/portfolio-16.jpg", alt: "Dotlinetattu Portfolio Photo 16" },
-  { id: 17, category: "Gallery", src: "/portfolio/portfolio-17.jpg", alt: "Dotlinetattu Portfolio Photo 17" },
-  { id: 18, category: "Gallery", src: "/portfolio/portfolio-18.jpg", alt: "Dotlinetattu Portfolio Photo 18" },
-  { id: 19, category: "Gallery", src: "/portfolio/portfolio-19.jpg", alt: "Dotlinetattu Portfolio Photo 19" },
-  { id: 20, category: "Gallery", src: "/portfolio/portfolio-20.jpg", alt: "Dotlinetattu Portfolio Photo 20" },
-  { id: 21, category: "Gallery", src: "/portfolio/portfolio-21.jpg", alt: "Dotlinetattu Portfolio Photo 21" },
+  { id: 2, category: "Gallery", src: "/portfolio/portfolio-2.jpeg", alt: "Dotlinetattu Portfolio Photo 2" },
+  { id: 3, category: "Gallery", src: "/portfolio/portfolio-3.jpeg", alt: "Dotlinetattu Portfolio Photo 3" },
+  { id: 4, category: "Gallery", src: "/portfolio/portfolio-4.jpeg", alt: "Dotlinetattu Portfolio Photo 4" },
+  { id: 5, category: "Gallery", src: "/portfolio/portfolio-5.jpeg", alt: "Dotlinetattu Portfolio Photo 5" },
+  { id: 6, category: "Gallery", src: "/portfolio/portfolio-6.jpeg", alt: "Dotlinetattu Portfolio Photo 6" },
+  { id: 7, category: "Gallery", src: "/portfolio/portfolio-7.jpeg", alt: "Dotlinetattu Portfolio Photo 7" },
+  { id: 8, category: "Gallery", src: "/portfolio/portfolio-8.jpeg", alt: "Dotlinetattu Portfolio Photo 8" },
+  { id: 9, category: "Gallery", src: "/portfolio/portfolio-9.jpeg", alt: "Dotlinetattu Portfolio Photo 9" },
+  { id: 10, category: "Gallery", src: "/portfolio/portfolio-10.jpeg", alt: "Dotlinetattu Portfolio Photo 10" },
+
 ];
 
 const categories = ["Gallery"];

@@ -10,14 +10,14 @@ const apprenticesData = [
   {
     name: "JESSICA",
     role: "Tattoo Apprentice",
-    image: "/jessica.jpg", // Siapkan gambar
+    image: "/jessica.jpeg", // Siapkan gambar
     description: "Demonstrating extraordinary natural talent and dedication, Jessica achieved her status as an official tattoo apprentice at Dotlinetattu in a remarkably short time of just 2 weeks. Focusing on precision and traditional aesthetics, she is rapidly mastering the fundamental techniques of professional tattooing right here in our Bali studio.",
 
   },
   {
     name: "FADLAN NANTO",
     role: "Tattoo Apprentice / Fine Arts",
-    image: "/fadlan.jpg", // Siapkan gambar
+    image: "/fadlan.jpeg", // Siapkan gambar
     description: "Bringing a strong academic foundation to the world of ink, Fadlan became a tattoo apprentice directly from his background at the prestigious Indonesian Institute of Arts (ISI). His deep understanding of visual arts, anatomy, and cultural motifs allows him to bring a unique, fine-art perspective to his custom tattoo designs in Bali.",
   
   }
