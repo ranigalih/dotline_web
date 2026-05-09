@@ -81,12 +81,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.title}
           </h1>
 
-          {/* Cover Image */}
-          <div className="w-full aspect-[21/9] md:aspect-[2.5/1] relative overflow-hidden border border-white/10 mb-12">
+          {/* Cover Image Sudah Diperbaiki*/}
+          <div className="w-full relative overflow-hidden border border-white/10 mb-12 bg-black/20">
             <img 
               src={post.coverImage} 
               alt={post.title} 
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-h-[600px] object-contain mx-auto"
             />
           </div>
         </header>

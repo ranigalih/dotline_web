@@ -34,7 +34,7 @@ const tattooServices = [
     title: "PIERCING",
     subtitle: "Professional Studio",
     locationLabel: "BALI STUDIO",
-    image: "/Piercing.jpg",
+    image: "/professional-piercing.jpg",
     description: "Complete your body art journey at the safest and most trusted piercing studio in Bali. We use medical-grade jewelry and strict sterilization protocols, making us the top recommendation for locals and tourists in the North Kuta area."
   }
 ];
