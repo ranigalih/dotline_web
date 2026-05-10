@@ -17,7 +17,7 @@ export function Footer() {
             "addressRegion": "Bali",
             "addressCountry": "ID"
         },
-        "telephone": "+62 877-7527-3111", // Jangan lupa isi dengan nomor WhatsApp asli
+        "telephone": "+62 877-7527-3111",
         "url": "https://dotlinetattu.com" 
     };
 
@@ -58,7 +58,6 @@ export function Footer() {
                                 rel="noopener noreferrer" 
                                 className="border border-white/20 hover:border-gingerbread hover:text-gingerbread text-white px-6 py-3.5 text-xs tracking-[0.2em] uppercase flex items-center justify-center gap-3 transition-colors"
                             >
-                                {/* SVG Instagram anti-error */}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                                 Follow Instagram
                             </a>
@@ -66,29 +65,39 @@ export function Footer() {
 
                         {/* Kontak Tambahan */}
                         <div className="flex gap-4 pt-2">
-                            <a href="#" className="p-2.5 border border-white/10 rounded-full hover:border-gingerbread hover:text-gingerbread transition-all text-muted-foreground">
+                            {/* Link ke WhatsApp */}
+                            <a 
+                                href="https://wa.me/6287775273111" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="p-2.5 border border-white/10 rounded-full hover:border-gingerbread hover:text-gingerbread transition-all text-muted-foreground"
+                            >
                                 <MessageCircle size={18} />
                             </a>
-                            <a href="mailto:silverjerryink@gmail.com" className="p-2.5 border border-white/10 rounded-full hover:border-gingerbread hover:text-gingerbread transition-all text-muted-foreground">
-                                <Mail size={18} />
-                            </a>
-                        </div>
-                    </div>
+
+                           {/* Icon Email - Baris 74 */}
+    <a 
+        href="mailto:silverjerryink@gmail.com" 
+        className="p-2.5 border border-white/10 rounded-full hover:border-gingerbread hover:text-gingerbread transition-all text-muted-foreground"
+    >
+        <Mail size={18} />
+    </a>
+</div>
+                    </div> {/* <-- Kurung penutup section 1 yang tadi hilang */}
 
                     {/* 2. Sitemap Links */}
                     <div>
                         <h3 className="text-white font-medium tracking-[0.2em] mb-6 text-sm">SITEMAP</h3>
                         <div className="grid grid-cols-2 gap-y-3 gap-x-4">
-                        {/* PERBAIKAN: Menghapus 'Book Consultation' agar tidak memicu link internal yang rusak (404) */}
-                        {['Home', 'About', 'Portfolio', 'Testimonials', 'FAQ', 'Apprentices', 'Blog'].map((item) => (
-                            <Link 
-                                key={item} 
-                                href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                                className="text-muted-foreground hover:text-gingerbread text-sm transition-colors"
-                            >
-                                {item}
-                            </Link>
-                        ))}
+                            {['Home', 'About', 'Portfolio', 'Testimonials', 'FAQ', 'Apprentices', 'Blog'].map((item) => (
+                                <Link 
+                                    key={item} 
+                                    href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                                    className="text-muted-foreground hover:text-gingerbread text-sm transition-colors"
+                                >
+                                    {item}
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
@@ -98,7 +107,6 @@ export function Footer() {
                         <div className="space-y-4">
                             <div className="flex items-start gap-3 text-muted-foreground text-sm">
                                 <MapPin size={18} className="text-gingerbread shrink-0 mt-0.5" />
-                                {/* PERBAIKAN: Alamat dirapikan agar tidak ada break line yang kosong */}
                                 <p>Dalung, Kuta Utara<br />Kabupaten Badung, Bali</p>
                             </div>
                             <p className="text-xs text-muted-foreground mt-4 italic">
