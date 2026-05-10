@@ -28,7 +28,7 @@ export default function BlogListPage() {
             Studio Journal
           </span>
           <h1 className="text-5xl md:text-7xl font-graduated mb-6">
-            THE <span className="text-gingerbread">INK</span> CHRONICLES
+            <span className="text-gingerbread">INK</span> CHRONICLES
           </h1>
           
           {/* 

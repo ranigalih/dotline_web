@@ -50,7 +50,7 @@ export function Footer() {
                                 rel="noopener noreferrer" 
                                 className="bg-gingerbread hover:bg-[#9A4C2E] text-white px-6 py-3.5 text-xs tracking-[0.2em] uppercase text-center font-medium transition-colors"
                             >
-                                Book a Private Consultation
+                                Book Your Deets Consultation
                             </a>
                             <a 
                                 href="https://www.instagram.com/dotlinetattu/" 
