@@ -12,15 +12,13 @@ const graduatedFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dotlinetattuhandpokebali.com'), // <-- 1. Tambahkan ini agar Next.js tahu domain utamamu
-  title: 'Dotlinetattu | Dotlinetattu by Silver Jerry',
-  description: 'Authentic traditional tattoo studio in bali.',
-  // Menambahkan logo.svg sebagai favicon utama dan Apple Touch Icon
+  metadataBase: new URL('https://dotlinetattuhandpokebali.com'),
+  title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
+  description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
   icons: {
     icon: '/Icon.png',
     apple: '/Icon.png', 
   },
-  // <-- 2. Tambahkan ini agar semua halaman otomatis dapet tag canonical secara dinamis
   alternates: {
     canonical: './',
   },
