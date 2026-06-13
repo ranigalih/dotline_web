@@ -97,7 +97,7 @@ export default function ApprenticesPage() {
         <p className="text-muted-foreground text-sm mb-8">
           Apprentice tattoos are done under the strict supervision of our senior artists at special rates. Contact us to check their availability.
         </p>
-        <Link href="https://linkbio.co/Tattoo-Booking?utm_source=website" target="_blank">
+        <Link href="/booking">
           <Button className="bg-gingerbread hover:bg-gingerbread-hover text-white px-10 py-6 rounded-none tracking-widest text-xs uppercase">
             INQUIRE NOW
           </Button>

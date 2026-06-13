@@ -44,14 +44,12 @@ export function Footer() {
                         
                         {/* Area Tombol Booking & Instagram */}
                         <div className="flex flex-col gap-3 pt-2 items-start max-w-xs">
-                            <a 
-                                href="https://linkbio.co/Tattoo-Booking?utm_source=website&utm_medium=organic" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <Link 
+                                href="/booking" 
                                 className="bg-gingerbread hover:bg-[#9A4C2E] text-white px-6 py-3.5 text-xs tracking-[0.2em] uppercase text-center font-medium transition-colors"
                             >
                                 Book Your Deets Consultation
-                            </a>
+                            </Link>
                             <a 
                                 href="https://www.instagram.com/dotlinetattu/" 
                                 target="_blank" 

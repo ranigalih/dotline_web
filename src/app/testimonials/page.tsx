@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { Button } from "@/components/ui/button";
 
@@ -45,11 +46,11 @@ export default function TestimonialPage() {
           <p className="text-muted-foreground mb-8 text-sm">
             Join hundreds of satisfied clients. Secure your appointment for a custom tattoo session today.
           </p>
-          <a href="https://linkbio.co/Tattoo-Booking?utm_source=website" target="_blank" rel="noopener noreferrer">
+          <Link href="/booking">
             <Button className="bg-gingerbread hover:bg-gingerbread-hover text-white px-10 py-7 rounded-none tracking-widest text-xs md:text-sm">
               BOOK YOUR SESSION
             </Button>
-          </a>
+          </Link>
         </div>
 
       </div>

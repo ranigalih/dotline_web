@@ -73,16 +73,11 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto relative z-20 px-4 sm:px-0">
-            <a 
-              href="https://linkbio.co/Tattoo-Booking?utm_source=website&utm_medium=organic" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
-            >
+            <Link href="/booking" className="w-full sm:w-auto">
               <Button className="w-full bg-gingerbread hover:bg-gingerbread-hover text-white px-8 md:px-10 py-6 md:py-7 rounded-none text-sm md:text-lg" size="lg">
                 BOOK CONSULTATION
               </Button>
-            </a>
+            </Link>
             
             <Link className="w-full sm:w-auto" href="/portfolio">
               <Button className="w-full sm:w-auto border-white/20 px-8 md:px-10 py-6 md:py-7 rounded-none text-sm md:text-lg hover:bg-white hover:text-black" size="lg" variant="outline">

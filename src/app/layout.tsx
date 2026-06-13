@@ -12,15 +12,54 @@ const graduatedFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dotlinetattuhandpokebali.com'),
+  metadataBase: new URL('https://dotlinetattu.com'),
   title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
   description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
   icons: {
     icon: '/Icon.png',
-    apple: '/Icon.png', 
+    shortcut: '/Icon.png',
+    apple: '/Icon.png',
+    other: [
+      {
+        rel: 'manifest',
+        url: '/site.webmanifest',
+      },
+    ],
+  },
+  openGraph: {
+    title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
+    description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
+    type: 'website',
+    siteName: 'Dotlinetattu',
+    url: 'https://dotlinetattu.com',
+    images: [
+      {
+        url: '/Icon.png',
+        width: 1200,
+        height: 1200,
+        alt: 'Dotlinetattu sacred ornament logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
+    description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
+    images: ['/Icon.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
   },
   alternates: {
-    canonical: './',
+    canonical: 'https://dotlinetattu.com/',
   },
 };
 

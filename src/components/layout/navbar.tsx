@@ -52,11 +52,11 @@ export function Navbar(){
                         ))}
                     </div>
                     <div className="hidden lg:block">
-                        <a href="https://linkbio.co/Tattoo-Booking?utm_source=website&utm_medium=organic" target="_blank" rel="noopener noreferrer">
+                        <Link href="/booking">
                             <Button variant="outline" className="rounded-none border-gingerbread text-gingerbread hover:bg-gingerbread hover:text-white text-[10px] tracking-widest h-9 px-6">
                                 BOOK NOW
                             </Button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="flex items-center justify-between h-full">
@@ -82,11 +82,11 @@ export function Navbar(){
                             {link.name}
                         </Link>
                     ))}
-                    <a href="https://linkbio.co/Tattoo-Booking?utm_source=website&utm_medium=organic" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/booking" onClick={() => setMobileMenuOpen(false)}>
                         <Button className="w-full mt-2 bg-gingerbread hover:bg-gingerbread-hover text-white rounded-none tracking-widest">
                         BOOK CONSULTATION
                         </Button>
-                    </a>
+                    </Link>
                 </div>
             )}
         </nav>

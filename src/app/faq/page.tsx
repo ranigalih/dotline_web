@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -109,11 +110,11 @@ export default function FAQPage() {
               </div>
             </div>
             
-            <a href="https://linkbio.co/Tattoo-Booking?utm_source=website" target="_blank" rel="noopener noreferrer" className="block">
+            <Link href="/booking" className="block">
               <Button className="w-full bg-gingerbread hover:bg-gingerbread-hover text-white rounded-none py-6 tracking-widest text-xs uppercase">
                 Book Your Session
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Google Maps Iframe */}
