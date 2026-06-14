@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 
 export default function BookingPage() {
-  // 1. Nomor WhatsApp Studio (Sudah Benar & Murni Angka)
+  // Nomor WhatsApp Studio Kamu
   const STUDIO_WHATSAPP = "6287775273111"; 
 
   const [formData, setFormData] = useState({
@@ -21,7 +20,6 @@ export default function BookingPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Fungsi untuk memformat tampilan tanggal agar rapi saat dibaca di WhatsApp
   const formatDateForWhatsApp = (dateString: string) => {
     if (!dateString) return "-";
     const date = new Date(dateString);
@@ -35,10 +33,8 @@ export default function BookingPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     const formattedDate = formatDateForWhatsApp(formData.bookingDate);
 
-    // Menyusun teks template rapi untuk dikirimkan ke WhatsApp Studio
     const message = `Hello Dotlinetattu Studio! I would like to book a session.%0A%0A` +
       `*Name:* ${formData.name}%0A` +
       `*Email:* ${formData.email}%0A` +
@@ -48,7 +44,6 @@ export default function BookingPage() {
       `*Requested Date:* ${formattedDate}%0A` + 
       `*Design Idea:* ${formData.description}`;
 
-    // Menggunakan API global WhatsApp yang lebih stabil untuk menghindari eror 404
     window.open(`https://api.whatsapp.com/send?phone=${STUDIO_WHATSAPP}&text=${message}`, "_blank");
   };
 
@@ -125,7 +120,7 @@ export default function BookingPage() {
               <label className="block text-xs uppercase tracking-wider text-white/70 mb-2 font-medium">Preferred Date</label>
               <input 
                 type="date" name="bookingDate" required value={formData.bookingDate} onChange={handleChange}
-                className="w-full bg-black/50 border border-white/10 px-4 py-3 text-sm rounded-none focus:outline-none focus:border-gingerbread transition-colors text-white color-scheme-dark" 
+                className="w-full bg-black/50 border border-white/10 px-4 py-3 text-sm rounded-none focus:outline-none focus:border-gingerbread transition-colors text-white" 
                 style={{ colorScheme: "dark" }} 
               />
             </div>
@@ -140,10 +135,13 @@ export default function BookingPage() {
             />
           </div>
 
-          {/* Menggunakan sistem hover opacity yang aman agar tidak memicu 503 */}
-          <Button type="submit" className="w-full bg-gingerbread hover:opacity-90 text-white rounded-none py-6 tracking-widest text-xs uppercase transition-all duration-300 font-bold mt-4">
+          {/* Menggunakan button HTML asli bawaan yang anti-gagal kompilasi */}
+          <button 
+            type="submit" 
+            className="w-full bg-gingerbread hover:opacity-90 text-white rounded-none py-4 tracking-widest text-xs uppercase transition-all duration-300 font-bold mt-4 block text-center"
+          >
             Submit & Send to WhatsApp
-          </Button>
+          </button>
         </form>
       </div>
     </div>
