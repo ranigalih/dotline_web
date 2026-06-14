@@ -96,7 +96,6 @@ export default function FAQPage() {
                   <MapPin className="text-white shrink-0" size={20} />
                   <div>
                     <strong className="block text-white font-medium mb-1 tracking-wider uppercase text-xs">Dotlinetattu Studio</strong>
-                    {/* REVISI: Teks alamat dirapikan, menghilangkan <br> yang tidak perlu dan fokus pada lokasi */}
                     <p className="text-sm leading-relaxed">Dalung, Kuta Utara<br/>Kabupaten Badung, Bali</p>
                   </div>
                 </div>
@@ -111,7 +110,8 @@ export default function FAQPage() {
             </div>
             
             <Link href="/booking" className="block">
-              <Button className="w-full bg-gingerbread hover:bg-gingerbread-hover text-white rounded-none py-6 tracking-widest text-xs uppercase">
+              {/* Perbaikan: Mengubah hover ke standar utility opacity agar tidak memicu eror build CSS */}
+              <Button className="w-full bg-gingerbread hover:bg-gingerbread/80 text-white rounded-none py-6 tracking-widest text-xs uppercase transition-colors duration-300">
                 Book Your Session
               </Button>
             </Link>

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getPostSlugs } from '@/lib/mdx';
 
-// SUDAH DIUBAH: Menggunakan domain asli kamu
+
 const baseUrl = 'https://dotlinetattuhandpokebali.com'; 
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -16,19 +16,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/booking',
   ];
 
-  // Perbaikan: Pastikan tipe data changeFrequency didefinisikan dengan benar
+  
   const blogRoutes = getPostSlugs().map((slug) => ({
     url: `${baseUrl}/blog/${slug.replace(/\.mdx$/, '')}`,
-    lastModified: new Date(), // Lebih aman menggunakan objek Date langsung dibanding .toISOString()
-    changeFrequency: 'weekly' as const, // Menggunakan CamelCase dan 'as const'
-    priority: 0.7,
+    lastModified: new Date(), 
+    changeFrequency: 'weekly' as const, 
   }));
 
   const sitemapEntries: MetadataRoute.Sitemap = [
     ...staticRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
-      changeFrequency: 'daily' as const, // Menggunakan CamelCase dan 'as const'
+      changeFrequency: 'daily' as const, 
       priority: 0.9,
     })),
     ...blogRoutes,
