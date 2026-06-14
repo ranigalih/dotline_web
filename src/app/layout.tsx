@@ -12,7 +12,8 @@ const graduatedFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dotlinetattu.com'),
+  // 1. MEMPERBAIKI DOMAIN UTAMA DI SINI
+  metadataBase: new URL('https://dotlinetattuhandpokebali.com'),
   title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
   description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
   icons: {
@@ -31,7 +32,8 @@ export const metadata: Metadata = {
     description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
     type: 'website',
     siteName: 'Dotlinetattu',
-    url: 'https://dotlinetattu.com',
+    // 2. MEMPERBAIKI URL OPEN GRAPH
+    url: 'https://dotlinetattuhandpokebali.com',
     images: [
       {
         url: '/Icon.png',
@@ -59,7 +61,8 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://dotlinetattu.com/',
+    // 3. MEMPERBAIKI ALAMAT KANONIKAL RESMI
+    canonical: 'https://dotlinetattuhandpokebali.com/',
   },
 };
 
