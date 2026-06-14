@@ -4,8 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function BookingPage() {
-  // 1. MASUKKAN NOMOR WHATSAPP STUDIO KAMU DI SINI (Pastikan HANYA ANGKA, tanpa "+", "-", atau spasi)
-  // Contoh: "628123456789"
+  // 1. Nomor WhatsApp Studio (Sudah Benar & Murni Angka)
   const STUDIO_WHATSAPP = "6287775273111"; 
 
   const [formData, setFormData] = useState({
@@ -14,7 +13,7 @@ export default function BookingPage() {
     tattooType: "Handpoke",
     placement: "",
     size: "",
-    bookingDate: "", // State baru untuk menampung tanggal
+    bookingDate: "", 
     description: "",
   });
 
@@ -46,7 +45,7 @@ export default function BookingPage() {
       `*Method:* ${formData.tattooType}%0A` +
       `*Placement:* ${formData.placement}%0A` +
       `*Estimated Size:* ${formData.size}%0A` +
-      `*Requested Date:* ${formattedDate}%0A` + // Menampilkan tanggal rapi di WA
+      `*Requested Date:* ${formattedDate}%0A` + 
       `*Design Idea:* ${formData.description}`;
 
     // Menggunakan API global WhatsApp yang lebih stabil untuk menghindari eror 404
@@ -122,13 +121,12 @@ export default function BookingPage() {
               />
             </div>
 
-            {/* INPUT FIELD TANGGAL BARU */}
             <div>
               <label className="block text-xs uppercase tracking-wider text-white/70 mb-2 font-medium">Preferred Date</label>
               <input 
                 type="date" name="bookingDate" required value={formData.bookingDate} onChange={handleChange}
                 className="w-full bg-black/50 border border-white/10 px-4 py-3 text-sm rounded-none focus:outline-none focus:border-gingerbread transition-colors text-white color-scheme-dark" 
-                style={{ colorScheme: "dark" }} // Memastikan ikon kalender berwarna terang di tema gelap
+                style={{ colorScheme: "dark" }} 
               />
             </div>
           </div>
@@ -142,7 +140,8 @@ export default function BookingPage() {
             />
           </div>
 
-          <Button type="submit" className="w-full bg-gingerbread hover:bg-gingerbread/80 text-white rounded-none py-6 tracking-widest text-xs uppercase transition-all duration-300 font-bold mt-4">
+          {/* Menggunakan sistem hover opacity yang aman agar tidak memicu 503 */}
+          <Button type="submit" className="w-full bg-gingerbread hover:opacity-90 text-white rounded-none py-6 tracking-widest text-xs uppercase transition-all duration-300 font-bold mt-4">
             Submit & Send to WhatsApp
           </Button>
         </form>
