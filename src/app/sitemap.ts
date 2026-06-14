@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getPostSlugs } from '@/lib/mdx';
 
-const baseUrl = 'https://dotlinetattu.com';
+// SUDAH DIUBAH: Menggunakan domain asli kamu
+const baseUrl = 'https://dotlinetattuhandpokebali.com'; 
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
