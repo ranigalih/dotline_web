@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-// Daftar gambar portofolio bergerak (carousel)
-// Pastikan file-file gambar ini ada di folder public kamu, atau sesuaikan namanya
+// Daftar gambar portfolio-1 sampai portfolio-6 sesuai folder di public/portfolio
 const PORTFOLIO_IMAGES = [
-  "/Handpoke.jpeg",
-  "/Handtapping.jpeg",
-  "/jerry.jpeg",
-  "/jessica.jpeg"
+  "/portfolio/portfolio-1.jpeg",
+  "/portfolio/portfolio-2.jpeg",
+  "/portfolio/portfolio-3.jpeg",
+  "/portfolio/portfolio-4.jpeg",
+  "/portfolio/portfolio-5.jpeg",
+  "/portfolio/portfolio-6.jpeg"
 ];
 
 export default function BookingPage() {
@@ -25,8 +26,19 @@ export default function BookingPage() {
     downPayment: '',
   });
 
-  // State untuk mengatur pergeseran gambar
+  // State untuk mengatur pergeseran gambar carousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // --- FITUR OTOMATIS GESER (AUTOPLAY) ---
+  useEffect(() => {
+    // Mengatur timer: Gambar akan bergeser otomatis setiap 3500 ms (3,5 detik)
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev === PORTFOLIO_IMAGES.length - 1 ? 0 : prev + 1));
+    }, 3500);
+
+    // Membersihkan timer saat komponen tidak dibuka lagi agar performa web tetap ringan
+    return () => clearInterval(timer);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -56,7 +68,10 @@ export default function BookingPage() {
       `*Down Payment Status:* ${formData.downPayment}`;
 
     const secureMessage = encodeURIComponent(rawMessage);
+    
+    // PENTING: Ganti nomor di bawah dengan nomor WhatsApp aktif studio kalian
     const STUDIO_WHATSAPP = "6287775273111"; 
+
     window.open(`https://api.whatsapp.com/send?phone=${STUDIO_WHATSAPP}&text=${secureMessage}`, "_blank");
   };
 
@@ -135,7 +150,7 @@ export default function BookingPage() {
             />
           </div>
 
-          {/* SIMULASI CHOOSE FILE */}
+          {/* CHOOSE FILE BOX */}
           <div className="space-y-1.5">
             <span className="text-sm font-medium text-black">Send us picture *</span>
             <div className="w-full border border-black py-8 flex flex-col items-center justify-center bg-white cursor-pointer hover:bg-neutral-50 transition-colors">
@@ -184,7 +199,7 @@ export default function BookingPage() {
         </p>
       </div>
 
-      {/* CAROUSEL GAMBAR BERGERAK (Sama Persis Seperti Foto Referensi) */}
+      {/* CAROUSEL GAMBAR BERGERAK OTOMATIS (PORTFOLIO 1 - 6) */}
       <div className="w-full max-w-2xl mt-8 relative group border border-neutral-200">
         <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden relative">
           <img 
@@ -196,6 +211,7 @@ export default function BookingPage() {
 
         {/* Tombol Panah Kiri */}
         <button 
+          type="button"
           onClick={prevImage}
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-black w-10 h-10 border border-neutral-300 flex items-center justify-center shadow-md transition-all active:scale-90"
         >
@@ -204,6 +220,7 @@ export default function BookingPage() {
 
         {/* Tombol Panah Kanan */}
         <button 
+          type="button"
           onClick={nextImage}
           className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-black w-10 h-10 border border-neutral-300 flex items-center justify-center shadow-md transition-all active:scale-90"
         >
@@ -211,10 +228,11 @@ export default function BookingPage() {
         </button>
 
         {/* Indikator Titik (Dots) */}
-        <div className="absolute bottom-4 left-1/2 -translate-y-1/2 -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
           {PORTFOLIO_IMAGES.map((_, index) => (
             <button
               key={index}
+              type="button"
               onClick={() => setCurrentImageIndex(index)}
               className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'}`}
             />
