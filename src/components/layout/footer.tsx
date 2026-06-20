@@ -4,26 +4,27 @@ import { MapPin, Mail, MessageCircle } from "lucide-react";
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
-    // JSON-LD for local SEO Business
+    // JSON-LD untuk Local SEO Business (Sudah disinkronkan ke domain baru)
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "TattooParlor",
         "name": "Dotlinetattu",
-        "image": "https://dotlinetattu.com/logo.png",
-        "description": "Authentic traditional tattoo studio in bali",
+        "image": "https://dotlinetattuhandpokebali.com/Icon.png",
+        "description": "Authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.",
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Dalung, Kuta Utara",
+            "streetAddress": "Dalung, Kuta Utara",
+            "addressLocality": "Badung",
             "addressRegion": "Bali",
             "addressCountry": "ID"
         },
         "telephone": "+62 877-7527-3111",
-        "url": "https://dotlinetattu.com" 
+        "url": "https://dotlinetattuhandpokebali.com" 
     };
 
     return (
         <footer className="bg-black border-t border-white/10 pt-16 pb-8">
-            {/* Injeksi SEO JSON-LD in DOM */}
+            {/* Injeksi SEO JSON-LD ke dalam DOM */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -61,9 +62,8 @@ export function Footer() {
                             </a>
                         </div>
 
-                        {/* Kontak Tambahan */}
+                        {/* Kontak Sosial */}
                         <div className="flex gap-4 pt-2">
-                            {/* Link ke WhatsApp */}
                             <a 
                                 href="https://wa.me/6287775273111" 
                                 target="_blank" 
@@ -73,15 +73,14 @@ export function Footer() {
                                 <MessageCircle size={18} />
                             </a>
 
-                           {/* Icon Email - Baris 74 */}
-    <a 
-        href="mailto:silverjerryink@gmail.com" 
-        className="p-2.5 border border-white/10 rounded-full hover:border-gingerbread hover:text-gingerbread transition-all text-muted-foreground"
-    >
-        <Mail size={18} />
-    </a>
-</div>
-                    </div> {/* <-- Kurung penutup section 1 yang tadi hilang */}
+                            <a 
+                                href="mailto:silverjerryink@gmail.com" 
+                                className="p-2.5 border border-white/10 rounded-full hover:border-gingerbread hover:text-gingerbread transition-all text-muted-foreground"
+                            >
+                                <Mail size={18} />
+                            </a>
+                        </div>
+                    </div>
 
                     {/* 2. Sitemap Links */}
                     <div>
@@ -99,7 +98,7 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* 3. Location */}
+                    {/* 3. Location Info */}
                     <div>
                         <h3 className="text-white font-medium tracking-[0.2em] mb-6 text-sm">STUDIO</h3>
                         <div className="space-y-4">
@@ -117,7 +116,8 @@ export function Footer() {
 
                 {/* BOTTOM BAR */}
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-wider text-white/40">
-                    <p>&copy; {2018} Dotlinetattu. All rights reserved.</p>
+                    {/* PERBAIKAN: Menggabungkan tahun berdirinya studio dengan currentYear dinamis */}
+                    <p>&copy; 2018 - {currentYear} Dotlinetattu. All rights reserved.</p>
                     <p>Designed by @silverjery___</p>
                 </div>
                 

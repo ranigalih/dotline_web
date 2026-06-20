@@ -7,7 +7,6 @@ export const metadata = {
   description: "Got questions about traditional tattoos? Find answers about handtapping, handpoke, piercing, and visit our tattoo studio in Bali, welcoming clients from Canggu, Ubud, Uluwatu, and Denpasar.",
 };
 
-// Data FAQ yang dioptimasi untuk SEO Lokal & Long-tail Keywords
 const faqs = [
   {
     question: "What is the difference between Handpoke and Handtapping tattoos?",
@@ -22,7 +21,6 @@ const faqs = [
     answer: "Yes! Silver Jerry specializes in custom designs that blend traditional Indonesian woven ornaments and interior carvings with your personal vision. We recommend booking a consultation so we can draw a personalized concept that fits your body anatomy perfectly."
   },
   {
-    /* REVISI KLIEN: Pertanyaan dan Jawaban disesuaikan untuk menjangkau target area luas di Bali */
     question: "How do I book a tattoo session in Bali?",
     answer: "You can secure your spot by clicking the 'Book Consultation' button which will direct you to our official booking form. Since we operate mainly by appointment to maintain exclusivity and focus, we highly recommend booking your session in advance. Our studio is strategically located to warmly welcome clients traveling from Canggu, Ubud, Uluwatu, Denpasar, and across the globe."
   },
@@ -34,13 +32,10 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden">
+    <div className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden bg-black text-white">
       
-      {/* 
-        === REVISI KLIEN: DOMINASI WARNA BURN GINGER === 
-        Konsistensi efek cahaya Burn Ginger dari atas
-      */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--color-gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
+      {/* Pendaran cahaya Burn Ginger global */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
 
       <div className="container px-6 mx-auto max-w-4xl relative z-10">
         
@@ -58,7 +53,7 @@ export default function FAQPage() {
           </p>
         </div>
 
-        {/* SEO FAQ Accordion (Menggunakan HTML5 Native <details>) */}
+        {/* SEO FAQ Accordion */}
         <div className="space-y-4 mb-24 text-justify">
           {faqs.map((faq, index) => (
             <details 
@@ -66,12 +61,9 @@ export default function FAQPage() {
               className="group border border-white/10 bg-white/5 rounded-sm overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-gingerbread/50 transition-colors duration-300"
             >
               <summary className="flex items-center justify-between cursor-pointer p-6 font-graduated text-lg lg:text-xl tracking-wide hover:text-gingerbread transition-colors duration-300">
-                {/* Teks Pertanyaan */}
                 <span className="group-hover:text-gingerbread transition-colors duration-300">
                   {faq.question}
                 </span>
-                
-                {/* Icon Panah */}
                 <span className="text-white/50 group-hover:text-gingerbread transition-all duration-300 transform group-open:-rotate-180">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </span>
@@ -110,7 +102,6 @@ export default function FAQPage() {
             </div>
             
             <Link href="/booking" className="block">
-              {/* Perbaikan: Mengubah hover ke standar utility opacity agar tidak memicu eror build CSS */}
               <Button className="w-full bg-gingerbread hover:bg-gingerbread/80 text-white rounded-none py-6 tracking-widest text-xs uppercase transition-colors duration-300">
                 Book Your Session
               </Button>
@@ -122,28 +113,29 @@ export default function FAQPage() {
             <div className="absolute inset-0 bg-gingerbread/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none mix-blend-overlay" />
             <div className="absolute inset-0 bg-gradient-to-t from-gingerbread/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
 
+            {/* FIX PROPERTI JSX: Menghapus allowFullScreen={false} agar lolos build engine */}
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.7946397611618!2d115.16573517587243!3d-8.615704991430032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd239875c75b12b%3A0xaa4d5ada60d8484d!2sDotlinetattu!5e0!3m2!1sen!2sid!4v1777278397963!5m2!1sen!2sid" 
-                className="w-full h-full grayscale invert-[90%] hue-rotate-180 contrast-75 opacity-70 group-hover:opacity-100 group-hover:grayscale-0 group-hover:invert-0 group-hover:hue-rotate-0 transition-all duration-1000 scale-105 group-hover:scale-100" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.7946397611618!2d115.16573517587243!3d-8.615704991430032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd239875c75b12b%3A0xaa4d5ada60d8484d!2sDotlinetattu!5e0!3m2!1sen!2sid!4v1777278397963!5m2!1sen!2sid" 
+              className="w-full h-full grayscale invert-[90%] hue-rotate-180 contrast-75 opacity-70 group-hover:opacity-100 group-hover:grayscale-0 group-hover:invert-0 group-hover:hue-rotate-0 transition-all duration-1000 scale-105 group-hover:scale-100" 
+              style={{ border: 0 }} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
             />
 
-            {/* Label Interaktif di Pojok Peta */}
+            {/* Label Interaktif Pojok Peta */}
             <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <a 
+              <a 
                 href="https://maps.app.goo.gl/pkpmXJHmPdj2Ahw79" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-black/80 backdrop-blur-md border border-gingerbread/50 text-gingerbread text-[10px] px-3 py-1.5 tracking-widest uppercase hover:bg-gingerbread hover:text-white transition-all"
-                >
+              >
                 Open In Google Maps
-                </a>
+              </a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

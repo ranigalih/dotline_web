@@ -1,245 +1,55 @@
-"use client";
+import { Button } from "@/components/ui/button";
 
-import React, { useState, useEffect } from 'react';
-
-// Daftar gambar portfolio-1 sampai portfolio-6 sesuai folder di public/portfolio
-const PORTFOLIO_IMAGES = [
-  "/portfolio/portfolio-1.jpeg",
-  "/portfolio/portfolio-2.jpeg",
-  "/portfolio/portfolio-3.jpeg",
-  "/portfolio/portfolio-4.jpeg",
-  "/portfolio/portfolio-5.jpeg",
-  "/portfolio/portfolio-6.jpeg"
-];
+export const metadata = {
+  title: "Online Tattoo Booking | Dotline Tattoo Bali",
+  description: "Book your traditional handpoke, handtapping, or custom machine tattoo session at Dotline Tattoo Bali.",
+  alternates: {
+    canonical: "https://dotlinetattuhandpokebali.com/booking",
+  },
+};
 
 export default function BookingPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    ageSex: '',
-    email: '',
-    dateConsultation: '',
-    time: '',
-    country: '',
-    placement: '',
-    phone: '',
-    dateSession: '',
-    downPayment: '',
-  });
-
-  // State untuk mengatur pergeseran gambar carousel
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // --- FITUR OTOMATIS GESER (AUTOPLAY) ---
-  useEffect(() => {
-    // Mengatur timer: Gambar akan bergeser otomatis setiap 3500 ms (3,5 detik)
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev === PORTFOLIO_IMAGES.length - 1 ? 0 : prev + 1));
-    }, 3500);
-
-    // Membersihkan timer saat komponen tidak dibuka lagi agar performa web tetap ringan
-    return () => clearInterval(timer);
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev === PORTFOLIO_IMAGES.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? PORTFOLIO_IMAGES.length - 1 : prev - 1));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const rawMessage = `Hello Dotlinetattu Studio! New Booking Request:\n\n` +
-      `*Name:* ${formData.name}\n` +
-      `*Age/Sex:* ${formData.ageSex}\n` +
-      `*Email:* ${formData.email}\n` +
-      `*Consultation Date:* ${formData.dateConsultation}\n` +
-      `*Preferred Time:* ${formData.time}\n` +
-      `*Country/Region:* ${formData.country}\n` +
-      `*Tattoo Placement:* ${formData.placement}\n` +
-      `*Phone:* ${formData.phone}\n` +
-      `*Session Date:* ${formData.dateSession}\n` +
-      `*Down Payment Status:* ${formData.downPayment}`;
-
-    const secureMessage = encodeURIComponent(rawMessage);
-    
-    // PENTING: Ganti nomor di bawah dengan nomor WhatsApp aktif studio kalian
-    const STUDIO_WHATSAPP = "6287775273111"; 
-
-    window.open(`https://api.whatsapp.com/send?phone=${STUDIO_WHATSAPP}&text=${secureMessage}`, "_blank");
-  };
-
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-center pt-16 pb-24 px-4 font-sans select-none">
+    <div className="min-h-screen pt-32 pb-24 bg-black text-white selection:bg-gingerbread selection:text-white relative overflow-hidden">
       
-      {/* HEADER UTAMA */}
-      <div className="text-center mb-6">
-        <h1 className="text-4xl font-normal tracking-wide mb-2" style={{ fontFamily: 'var(--font-graduated), sans-serif' }}>
-          Tattoo Booking
-        </h1>
-        <p className="text-xl text-black font-light">Welcome to our booking form</p>
-      </div>
+      {/* 
+        === KONSISTENSI VISUAL: EFFECT BURN GINGER === 
+        Menyelipkan pendaran cahaya khas studio dari atas agar senada dengan halaman lainnya
+      */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
 
-      {/* FORM UTAMA (Gaya Kotak Tebal Minimalis) */}
-      <div className="w-full max-w-2xl border-2 border-black p-6 md:p-8 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-        <h2 className="text-xl font-bold uppercase tracking-tight mb-6">Drop your deets here</h2>
+      <div className="container px-6 mx-auto max-w-3xl text-center relative z-10">
         
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <input 
-              type="text" name="name" required placeholder="Name *" value={formData.name} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none focus:bg-neutral-50 transition-colors"
-            />
-          </div>
-
-          <div>
-            <input 
-              type="text" name="ageSex" required placeholder="Age/sex *" value={formData.ageSex} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none focus:bg-neutral-50 transition-colors"
-            />
-          </div>
-
-          <div>
-            <input 
-              type="email" name="email" required placeholder="Email *" value={formData.email} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none focus:bg-neutral-50 transition-colors"
-            />
-          </div>
-
-          <div className="relative">
-            <input 
-              type="text" name="dateConsultation" required placeholder="Date consultation *" value={formData.dateConsultation} onFocus={(e) => e.target.type = 'date'} onBlur={(e) => e.target.type = 'text'} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none bg-white cursor-pointer appearance-none text-left"
-            />
-            <span className="absolute right-4 top-4 text-sm pointer-events-none">❯</span>
-          </div>
-
-          <div className="relative">
-            <input 
-              type="text" name="time" required placeholder="Time *" value={formData.time} onFocus={(e) => e.target.type = 'time'} onBlur={(e) => e.target.type = 'text'} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none bg-white cursor-pointer appearance-none text-left"
-            />
-            <span className="absolute right-4 top-4 text-sm pointer-events-none">❯</span>
-          </div>
-
-          <div className="relative">
-            <select 
-              name="country" required value={formData.country} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none bg-white cursor-pointer appearance-none text-left text-neutral-500 focus:text-black"
-            >
-              <option value="" disabled>Country/Region *</option>
-              <option value="Indonesia">Indonesia</option>
-              <option value="Australia">Australia</option>
-              <option value="Europe">Europe</option>
-              <option value="United States">United States</option>
-              <option value="Other">Other</option>
-            </select>
-            <span className="absolute right-4 top-4 text-sm pointer-events-none rotate-90">❯</span>
-          </div>
-
-          <div>
-            <textarea 
-              name="placement" required placeholder="Let us know which places do you want to get tattoo *" value={formData.placement} onChange={handleChange} rows={3}
-              className="w-full border border-black p-3 text-base outline-none resize-none focus:bg-neutral-50 transition-colors"
-            />
-          </div>
-
-          {/* CHOOSE FILE BOX */}
-          <div className="space-y-1.5">
-            <span className="text-sm font-medium text-black">Send us picture *</span>
-            <div className="w-full border border-black py-8 flex flex-col items-center justify-center bg-white cursor-pointer hover:bg-neutral-50 transition-colors">
-              <span className="text-2xl mb-1">☁️</span>
-              <span className="text-sm font-bold">Choose a file</span>
-              <span className="text-xs text-neutral-500 mt-0.5">Image or PDF, Size limit: 10MB</span>
-            </div>
-          </div>
-
-          <div className="flex gap-2">
-            <div className="w-20 border border-black p-3 flex justify-between items-center bg-white cursor-pointer">
-              <span className="text-sm">+1</span>
-              <span className="text-xs">▼</span>
-            </div>
-            <input 
-              type="tel" name="phone" required placeholder="Phone *" value={formData.phone} onChange={handleChange}
-              className="flex-1 border border-black p-3 text-base outline-none focus:bg-neutral-50 transition-colors"
-            />
-          </div>
-
-          <div className="relative">
-            <input 
-              type="text" name="dateSession" required placeholder="Date session *" value={formData.dateSession} onFocus={(e) => e.target.type = 'date'} onBlur={(e) => e.target.type = 'text'} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none bg-white cursor-pointer appearance-none text-left"
-            />
-            <span className="absolute right-4 top-4 text-sm pointer-events-none">❯</span>
-          </div>
-
-          <div>
-            <input 
-              type="text" name="downPayment" required placeholder="Down payment *" value={formData.downPayment} onChange={handleChange}
-              className="w-full border border-black p-3 text-base outline-none focus:bg-neutral-50 transition-colors"
-            />
-          </div>
-
-          <button 
-            type="submit"
-            className="w-full border border-black bg-white hover:bg-black hover:text-white p-3.5 text-base font-bold transition-all duration-200 uppercase tracking-wider mt-4"
-          >
-            Submit
-          </button>
-        </form>
-
-        <p className="text-[10px] text-center text-neutral-600 mt-4 leading-normal max-w-md mx-auto">
-          By submitting your contact details, you are providing your data to this link owner who may contact you.
+        {/* Title - Mengunci Font Graduated Bawaanmu */}
+        <h1 className="text-4xl md:text-5xl font-graduated mb-6 tracking-wide uppercase">
+          BOOK YOUR <span className="text-gingerbread">RITUAL</span>
+        </h1>
+        
+        <p className="text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed text-sm md:text-base">
+          Ready to get inked? To ensure the best custom design process, all consultation and session bookings are handled directly via our official WhatsApp.
         </p>
-      </div>
 
-      {/* CAROUSEL GAMBAR BERGERAK OTOMATIS (PORTFOLIO 1 - 6) */}
-      <div className="w-full max-w-2xl mt-8 relative group border border-neutral-200">
-        <div className="w-full aspect-[4/3] bg-neutral-100 overflow-hidden relative">
-          <img 
-            src={PORTFOLIO_IMAGES[currentImageIndex]} 
-            alt={`Portfolio ${currentImageIndex + 1}`} 
-            className="w-full h-full object-cover transition-all duration-500 ease-in-out"
-          />
+        {/* Booking Box Container */}
+        <div className="border border-white/10 bg-white/5 p-8 md:p-12 text-center rounded-none max-w-2xl mx-auto">
+          <h3 className="text-xl font-graduated mb-4 tracking-wider uppercase">DIRECT WHATSAPP BOOKING</h3>
+          <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
+            Click the button below to connect with our team. Please prepare your design reference, approximate size (in cm), and preferred dates.
+          </p>
+          
+          <a 
+            href="https://api.whatsapp.com/send?phone=62877752731119&text=Hi%20Dotlinetattu,%20I%20would%20like%20to%20book%20a%20tattoo%20session." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block w-full sm:w-auto"
+          >
+            {/* FIX BUG TAILWIND HOVER: Mengubah hover ke utility-class opacity yang aman dan responsif */}
+            <Button className="bg-gingerbread hover:bg-gingerbread/90 text-white rounded-none px-8 py-6 text-xs tracking-[0.2em] font-medium transition-all w-full sm:w-auto uppercase">
+              CHAT TO BOOK NOW
+            </Button>
+          </a>
         </div>
 
-        {/* Tombol Panah Kiri */}
-        <button 
-          type="button"
-          onClick={prevImage}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-black w-10 h-10 border border-neutral-300 flex items-center justify-center shadow-md transition-all active:scale-90"
-        >
-          ❮
-        </button>
-
-        {/* Tombol Panah Kanan */}
-        <button 
-          type="button"
-          onClick={nextImage}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-black w-10 h-10 border border-neutral-300 flex items-center justify-center shadow-md transition-all active:scale-90"
-        >
-          ❯
-        </button>
-
-        {/* Indikator Titik (Dots) */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-          {PORTFOLIO_IMAGES.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex ? 'bg-white scale-125' : 'bg-white/50'}`}
-            />
-          ))}
-        </div>
       </div>
-
     </div>
   );
 }

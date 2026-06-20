@@ -4,17 +4,20 @@ import { PortfolioGallery } from "@/components/ui/portfolio-gallery";
 export const metadata = {
   title: "Work Examples & Portfolio | Dotlinetattu Studio in Bali",
   description: "Explore our gallery of traditional handpoke, handtapping and custom machine tattoos by Silver Jerry at Dotlinetattu in Bali.",
+  alternates: {
+    canonical: "https://dotlinetattuhandpokebali.com/portfolio", // <-- Tambahan baris kanonis untuk kestabilan Google Search Console
+  },
 };
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden">
+    <div className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden bg-black text-white">
       
-      {/* 
-        === REVISI KLIEN: DOMINASI WARNA BURN GINGER === 
+      {/* === REVISI KLIEN: DOMINASI WARNA BURN GINGER === 
         Konsistensi efek cahaya Burn Ginger dari atas
+        FIX: Mengubah --color-gingerbread menjadi --gingerbread sesuai konfigurasi global
       */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--color-gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
 
       <div className="container px-6 mx-auto max-w-7xl relative z-10">
         
@@ -28,8 +31,7 @@ export default function PortfolioPage() {
             <span className="text-gingerbread">PORTFOLIO</span>
           </h1>
           
-          {/* 
-            === REVISI KLIEN: SEO LOKASI === 
+          {/* === REVISI KLIEN: SEO LOKASI === 
             Menyisipkan Bali sebagai fokus utama, dan menargetkan Canggu, Ubud, Uluwatu, Denpasar
           */}
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">

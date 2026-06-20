@@ -5,19 +5,23 @@ import { Button } from "@/components/ui/button";
 export const metadata = {
   title: "Client Reviews | Dotlinetattu Studio Bali",
   description: "Read real reviews from our clients about their traditional handtapping, handpoke, and custom tattoo experiences at Dotlinetattu Bali, welcoming clients from Canggu, Ubud, Uluwatu, and Denpasar.",
+  alternates: {
+    canonical: "https://dotlinetattuhandpokebali.com/testimonial", // <-- Ditambahkan tag kanonis agar SEO konsisten dengan halaman lain
+  },
 };
 
 export default function TestimonialPage() {
   return (
-    <div className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden">
+    <div className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden bg-black text-white">
       
       {/* 
         === REVISI KLIEN: DOMINASI WARNA BURN GINGER === 
         Konsistensi efek cahaya Burn Ginger dari atas
+        FIX: Mengubah --color-gingerbread menjadi --gingerbread agar sinkron dengan config global
       */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--color-gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
 
-      <div className="container px-6 mx-auto relative z-10">
+      <div className="container px-6 mx-auto relative z-10 max-w-7xl">
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-20">

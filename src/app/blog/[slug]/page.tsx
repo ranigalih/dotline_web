@@ -12,11 +12,11 @@ export async function generateStaticParams() {
   }));
 }
 
-// 2. Dynamic SEO Metadata: Mengambil judul & deskripsi langsung dari file MDX
+// 2. Dynamic SEO Metadata: Mengambil judul & deskripsi langsung dari file MDX (Fix Async Params)
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+  const resolvedParams = await params;
   try {
-    const post = getPostBySlug(slug);
+    const post = getPostBySlug(resolvedParams.slug);
     return {
       title: `${post.title} | Dotlinetattu Journal`,
       description: post.description,
@@ -33,26 +33,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 // 3. Halaman Utama Artikel
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+  const resolvedParams = await params;
   
   let post;
   try {
-    post = getPostBySlug(slug);
+    post = getPostBySlug(resolvedParams.slug);
   } catch (error) {
     // Jika artikel tidak ditemukan, lemparkan ke halaman 404 Next.js
     notFound();
   }
 
   return (
-    <article className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden">
+    <article className="min-h-screen pt-32 pb-24 relative selection:bg-gingerbread selection:text-white overflow-hidden bg-black text-white">
       
       {/* 
-        === REVISI KLIEN: DOMINASI WARNA BURN GINGER === 
-        Konsistensi efek cahaya Burn Ginger dari atas menggantikan ornamen lama
+        === FIX TURBOPACK BUG: SINKRONISASI WARNA BURN GINGER === 
+        Mengubah --color-gingerbread menjadi --gingerbread agar aman dibaca global CSS
       */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--color-gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--gingerbread)_0%,_transparent_70%)] opacity-20 pointer-events-none z-0" />
 
-      {/* Tambahan class 'relative z-10' agar konten berada di atas pendar cahaya */}
+      {/* Konten di atas pendar cahaya */}
       <div className="container px-6 mx-auto max-w-4xl relative z-10">
         
         {/* Tombol Back */}
@@ -77,11 +77,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </span>
           </div>
 
+          {/* Kunci Font Utama Judul Artikel */}
           <h1 className="text-4xl md:text-6xl font-graduated mb-8 leading-tight text-white">
             {post.title}
           </h1>
 
-          {/* Cover Image Sudah Diperbaiki*/}
+          {/* Cover Image */}
           <div className="w-full relative overflow-hidden border border-white/10 mb-12 bg-black/20">
             <img 
               src={post.coverImage} 
@@ -92,9 +93,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </header>
 
         {/* 
-          Article Body (MDX Content)
-          Prose class dari Tailwind akan otomatis memformat h1, h2, p, ul, img dll 
-          dari file Markdown menjadi rapi. Paragraf sudah diset justify agar rata kanan kiri.
+          === KUNCI TOTAL VISUAL TIPOGRAFI MDX ===
+          Seluruh heading h1, h2, h3 di dalam postingan otomatis dipaksa pakai font-graduated bawaanmu
         */}
         <div className="prose prose-invert prose-gingerbread max-w-none 
           prose-headings:font-graduated prose-headings:font-normal prose-headings:tracking-wide

@@ -73,7 +73,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`dark ${graduatedFont.variable}`}>
-      <body className="bg-background text-foreground antialiased font-graduated">
+      {/* 
+        PERBAIKAN: Menghapus 'font-graduated' dari body agar teks paragraf biasa 
+        tidak ikut menjadi font judul. Font standar (sans/body) otomatis diambil dari global.css
+      */}
+      <body className="bg-background text-foreground antialiased">
         <AudioProvider>
           <Navbar />
           <main className="min-h-screen">
