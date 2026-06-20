@@ -24,7 +24,7 @@ const tattooServices = [
   },
   {
     id: "tattooing",
-    title: "Tattooing",
+    title: "TATTOOING",
     subtitle: "Modern Ink",
     locationLabel: "NEAR CANGGU",
     image: "/Machine.jpeg",
@@ -52,35 +52,44 @@ export default function HomeClient() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-background selection:bg-gingerbread selection:text-white overflow-hidden">
+    <div className="relative min-h-screen bg-background selection:bg-gingerbread selection:text-white overflow-hidden font-graduated">
       
-      {/* Background Glow - FIX: Menggunakan var(--gingerbread) agar sesuai engine Tailwind v4 */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,_var(--gingerbread)_0%,_transparent_70%)] opacity-25 pointer-events-none z-0" />
+      {/* Background Glow - Gingerbread dominant accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-[120%] h-[80vh] bg-[radial-gradient(ellipse_at_top,var(--gingerbread)_0%,transparent_70%)] opacity-25 pointer-events-none z-0" />
 
       {/* Hero Section */}
-      <section className="relative min-h-[100svh] lg:min-h-[110vh] flex items-center justify-center overflow-hidden pt-24 lg:pt-20">
+      <section className="relative min-h-svh lg:min-h-[110vh] flex items-center justify-center overflow-hidden pt-24 lg:pt-20">
         <div className="container px-4 md:px-6 relative z-10 text-center flex flex-col items-center mt-12 md:mt-0">
-          <h2 className="text-gingerbread font-medium tracking-widest uppercase mb-4 md:mb-6 block animate-in slide-in-from-bottom duration-700 text-[10px] md:text-xs">
+          <p className="text-gingerbread font-medium tracking-widest uppercase mb-4 md:mb-6 block animate-in slide-in-from-bottom duration-700 text-[10px] md:text-xs">
             Authentic traditional tattoo studio in bali
-          </h2>
+          </p>
           
-          <h1 className="text-5xl sm:text-7xl md:text-[100px] lg:text-[120px] leading-[0.9] md:leading-none font-graduated mb-6 md:mb-8 animate-in slide-in-from-bottom duration-1000 delay-150">
-            Dotlinetattu by <br /> <span className="text-gingerbread">silver jerry</span>
+          <h1 className="text-5xl sm:text-7xl md:text-[100px] lg:text-[120px] leading-[0.9] md:leading-none font-graduated mb-6 md:mb-8 animate-in slide-in-from-bottom duration-1000 delay-150 text-gingerbread">
+            THE BEST TATTOO EXPERIENCE IN BALI
           </h1>
           
-          <p className="max-w-[90%] md:max-w-2xl text-muted-foreground mb-10 md:mb-12 animate-in fade-in duration-1000 delay-300 text-sm md:text-base leading-relaxed">
+          <p className="max-w-[90%] md:max-w-2xl text-gingerbread/85 mb-10 md:mb-12 animate-in fade-in duration-1000 delay-300 text-sm md:text-base leading-relaxed">
             Bringing authentic traditional and modern tattoo art in Bali, just minutes from Canggu. Specializing in Balinese Handpoke, Handtapping and Tattoo Machine services.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto relative z-20 px-4 sm:px-0">
             <Link href="/booking" className="w-full sm:w-auto">
-              <Button className="w-full bg-gingerbread hover:bg-gingerbread-hover text-white px-8 md:px-10 py-6 md:py-7 rounded-none text-sm md:text-lg" size="lg">
+              <Button 
+                className="w-full bg-gingerbread hover:bg-gingerbread-hover text-white px-8 md:px-10 py-6 md:py-7 rounded-none text-sm md:text-lg transition-all duration-200" 
+                size="lg"
+                aria-label="Book Your Premium Tattoo Consultation at Dotlinetattu"
+              >
                 BOOK CONSULTATION
               </Button>
             </Link>
             
             <Link className="w-full sm:w-auto" href="/portfolio">
-              <Button className="w-full sm:w-auto border-white/20 px-8 md:px-10 py-6 md:py-7 rounded-none text-sm md:text-lg hover:bg-white hover:text-black" size="lg" variant="outline">
+              <Button 
+                className="w-full sm:w-auto border-white/20 px-8 md:px-10 py-6 md:py-7 rounded-none text-sm md:text-lg hover:bg-white hover:text-black transition-all duration-200" 
+                size="lg" 
+                variant="outline"
+                aria-label="View Our Portfolio of Tattoo Designs and Work"
+              >
                 VIEW PORTFOLIO
               </Button>
             </Link>
@@ -94,25 +103,29 @@ export default function HomeClient() {
         )}
       </section>
 
-      {/* Local SEO & Slideshow Layout */}
+      {/* Local SEO & Service Showcase Section */}
       <section className="py-16 lg:py-24 bg-black/40 border-y border-white/5 overflow-hidden relative z-10 backdrop-blur-sm">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
             
             <div className="w-full lg:w-5/12 relative group order-2 lg:order-1">
-              <div className="relative aspect-square md:aspect-[4/5] w-full overflow-hidden border border-white/10 rounded-sm lg:rounded-none">
+              <div className="relative aspect-square md:aspect-4/5 w-full overflow-hidden border border-white/10 rounded-sm lg:rounded-none">
                 <div 
                   className="flex w-full h-full transition-transform duration-1000"
                   style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                  role="region"
+                  aria-label={`Service showcase: ${tattooServices[activeSlide].title}`}
+                  aria-live="polite"
                 >
                   {tattooServices.map((service, index) => (
                     <div key={service.id} className="min-w-full h-full relative">
                       <img 
                         src={service.image} 
-                        alt={`${service.title} Tattoo in Bali`} 
-                        className={`object-cover w-full h-full transition-all duration-[2000ms] ${activeSlide === index ? 'grayscale-0 scale-100' : 'grayscale scale-110'}`}
+                        alt={`${service.title} Tattoo - Premium Traditional and Modern Ink at Dotlinetattu Bali Studio`} 
+                        className={`object-cover w-full h-full transition-all duration-2000 ${activeSlide === index ? 'grayscale-0 scale-100' : 'grayscale scale-110'}`}
+                        loading={index === 0 ? "eager" : "lazy"}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent opacity-90" />
                     </div>
                   ))}
                 </div>
@@ -121,9 +134,9 @@ export default function HomeClient() {
 
             <div className="w-full lg:w-7/12 space-y-6 md:space-y-8 order-1 lg:order-2">
               <div className="space-y-3 md:space-y-4">
-                <span className="text-gingerbread font-medium tracking-widest text-[10px] uppercase">Local Expertise</span>
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-graduated leading-tight">
-                  THE BEST <span className="text-gingerbread">TATTOO EXPERIENCE</span> IN BALI
+                <span className="text-(--gingerbread) font-medium tracking-widest text-[10px] uppercase">Local Expertise</span>
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-graduated leading-tight text-(--gingerbread)">
+                  THE BEST TATTOO EXPERIENCE IN BALI
                 </h2>
               </div>
 
@@ -131,16 +144,27 @@ export default function HomeClient() {
                 Based in the artistic heart of <span className="text-white font-medium">BALI</span>, Dotlinetattu proudly welcomes clients from <span className="text-white font-medium">Canggu, Ubud, Uluwatu, Denpasar</span>, and across the globe.
               </p>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-3" role="tablist" aria-label="Tattoo service selection tabs">
                 {tattooServices.map((service, index) => (
-                  <div 
+                  <button
                     key={service.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeSlide === index}
                     onClick={() => setActiveSlide(index)}
-                    className={`cursor-pointer p-4 rounded-sm border-l-2 transition-all ${activeSlide === index ? 'border-gingerbread bg-white/5 opacity-100' : 'border-transparent opacity-50'}`}
+                    className={`w-full text-left p-4 rounded-sm border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gingerbread/50 ${
+                      activeSlide === index
+                        ? 'border-gingerbread bg-gingerbread/15 text-gingerbread shadow-[0_0_0_1px_rgba(216,104,58,0.45)]'
+                        : 'border-white/10 text-white hover:border-gingerbread hover:text-gingerbread hover:bg-white/5'
+                    }`}
+                    aria-label={`${service.title} service tab${activeSlide === index ? ', active' : ''}`}
                   >
-                    <h4 className={`text-lg font-graduated ${activeSlide === index ? 'text-gingerbread' : 'text-white'}`}>{service.title}</h4>
-                    {activeSlide === index && <p className="text-xs text-muted-foreground mt-2">{service.description}</p>}
-                  </div>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-lg font-graduated tracking-[0.15em] uppercase">{service.title}</span>
+                      <span className={`h-2 w-2 rounded-full transition-colors duration-300 ${activeSlide === index ? 'bg-gingerbread' : 'bg-white/20'}`} />
+                    </div>
+                    {activeSlide === index && <p className="text-xs text-gingerbread mt-3 leading-relaxed">{service.description}</p>}
+                  </button>
                 ))}
               </div>
             </div>

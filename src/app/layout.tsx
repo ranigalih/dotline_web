@@ -12,10 +12,10 @@ const graduatedFont = localFont({
 });
 
 export const metadata: Metadata = {
-  // 1. MEMPERBAIKI DOMAIN UTAMA DI SINI
   metadataBase: new URL('https://dotlinetattuhandpokebali.com'),
-  title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
-  description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
+  title: 'Premium Tattoo Studio Bali | Dotlinetattu Handpoke & Traditional Ink',
+  description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali. Expert traditional tattoo artist Silver Jerry brings authentic cultural tattoo art to life.',
+  keywords: ['tattoo bali', 'handpoke tattoo', 'balinese tattoo', 'traditional handtapping', 'premium tattoo studio', 'canggu tattoo', 'bali tattoo artist', 'custom tattoo'],
   icons: {
     icon: '/Icon.png',
     shortcut: '/Icon.png',
@@ -28,25 +28,24 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
-    description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
+    title: 'Premium Tattoo Studio Bali | Dotlinetattu Handpoke & Traditional Ink',
+    description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali.',
     type: 'website',
     siteName: 'Dotlinetattu',
-    // 2. MEMPERBAIKI URL OPEN GRAPH
     url: 'https://dotlinetattuhandpokebali.com',
     images: [
       {
         url: '/Icon.png',
         width: 1200,
         height: 1200,
-        alt: 'Dotlinetattu sacred ornament logo',
+        alt: 'Dotlinetattu Sacred Ornament Logo - Premium Tattoo Studio Bali',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dotlinetattu | Best Handpoke & Traditional Tattoo Studio in Bali',
-    description: 'Experience authentic traditional and modern tattoo art in Bali, minutes from Canggu. Specializing in Balinese Handpoke, Handtapping, and custom machine tattoos by Silver Jerry.',
+    title: 'Premium Tattoo Studio Bali | Dotlinetattu Handpoke & Traditional Ink',
+    description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali.',
     images: ['/Icon.png'],
   },
   robots: {
@@ -61,7 +60,6 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    // 3. MEMPERBAIKI ALAMAT KANONIKAL RESMI
     canonical: 'https://dotlinetattuhandpokebali.com/',
   },
 };
@@ -73,14 +71,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`dark ${graduatedFont.variable}`}>
-      {/* 
-        PERBAIKAN: Menghapus 'font-graduated' dari body agar teks paragraf biasa 
-        tidak ikut menjadi font judul. Font standar (sans/body) otomatis diambil dari global.css
-      */}
-      <body className="bg-background text-foreground antialiased">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Dotlinetattu Studio Bali',
+              image: 'https://dotlinetattuhandpokebali.com/Icon.png',
+              description: 'Premium handpoke and traditional Balinese tattoo studio in Bali',
+              url: 'https://dotlinetattuhandpokebali.com',
+              telephone: '+62-8XX-XXXXXXX',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'North Kuta, Bali',
+                addressLocality: 'Bali',
+                addressCountry: 'ID'
+              },
+              areaServed: ['Canggu', 'Ubud', 'Uluwatu', 'Denpasar', 'Bali'],
+              priceRange: '$$',
+              sameAs: [
+                'https://www.instagram.com/dotlinetattu',
+              ]
+            })
+          }}
+        />
+      </head>
+      <body className="bg-background text-foreground antialiased font-graduated">
         <AudioProvider>
           <Navbar />
-          <main className="min-h-screen">
+          <main className="min-h-screen pt-24 lg:pt-0">
             {children}
           </main>
           <Footer />

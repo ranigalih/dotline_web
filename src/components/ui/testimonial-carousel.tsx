@@ -69,95 +69,111 @@ export function TestimonialCarousel() {
   useEffect(() => {
     if (!isHovered) {
       const timer = setInterval(() => {
-        setActiveIndex((current) => (current + 1) % testimonials.length);
+        nextSlide();
       }, 5000); 
       return () => clearInterval(timer);
     }
-  }, [isHovered]); 
+  }, [isHovered, activeIndex]); 
 
   return (
     <div 
-      className="relative max-w-4xl mx-auto px-4 md:px-0"
+      className="relative max-w-4xl mx-auto px-4 md:px-0 select-none z-20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      role="region"
+      aria-label="Customer testimonials carousel"
+      aria-live="polite"
+      aria-atomic="true"
     >
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gingerbread/5 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[var(--gingerbread)]/5 blur-3xl pointer-events-none -z-10" />
 
-      {/* Main Carousel Viewport (Menggunakan item-start agar tinggi dinamis mengikuti konten text) */}
-      <div className="overflow-hidden relative border border-white/10 bg-white/5 backdrop-blur-md rounded-none">
+      {/* Main Carousel Viewport */}
+      <div className="border border-white/10 bg-white/5 backdrop-blur-md rounded-none w-full relative overflow-hidden">
         
-        {/* Track Slider */}
-        <div 
-          className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-full"
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-        >
-          {testimonials.map((testimonial) => (
-            <div 
-              key={testimonial.id} 
-              className="w-full shrink-0 flex flex-col items-center justify-between text-center p-6 sm:p-10 md:p-16 min-h-[380px] md:min-h-[420px]"
-            >
-              <div className="flex flex-col items-center w-full">
-                <Quote className="text-gingerbread/30 w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 shrink-0" />
-                
-                {/* Rating Bintang */}
-                <div className="flex gap-1 mb-4 md:mb-6 shrink-0">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-gingerbread text-gingerbread" />
-                  ))}
+        {/* Main Card Stack Container */}
+        <div className="relative w-full min-h-[420px] sm:min-h-[380px] md:min-h-[400px]">
+          {testimonials.map((testimonial, index) => {
+            const isActive = index === activeIndex;
+            return (
+              <div 
+                key={testimonial.id} 
+                className={`absolute inset-0 w-full h-full flex flex-col items-center justify-between text-center p-6 sm:p-10 md:p-12 transition-all duration-500 ease-in-out ${
+                  isActive 
+                    ? "opacity-100 pointer-events-auto scale-100 z-10" 
+                    : "opacity-0 pointer-events-none scale-95 z-0"
+                }`}
+                role={isActive ? "article" : undefined}
+              >
+                <div className="flex flex-col items-center w-full">
+                  <Quote className="text-[var(--gingerbread)]/20 w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 shrink-0" aria-hidden="true" />
+                  
+                  {/* Star Rating */}
+                  <div className="flex gap-1 mb-4 md:mb-6 shrink-0" aria-label={`${testimonial.rating} out of 5 stars`}>
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className="w-4 h-4 md:w-5 md:h-5 text-[var(--gingerbread)]" 
+                        style={{ fill: "var(--gingerbread)" }}
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="text-base md:text-lg lg:text-xl font-light leading-relaxed text-white/90 mb-6 italic max-w-2xl">
+                    "{testimonial.content}"
+                  </p>
                 </div>
 
-                {/* Teks Ulasan */}
-                <p className="text-base md:text-xl font-light leading-relaxed text-white/90 mb-8 italic max-w-2xl">
-                  "{testimonial.content}"
-                </p>
-              </div>
-
-              {/* Info Detail Klien */}
-              <div className="pt-6 border-t border-white/5 w-full shrink-0">
-                <h4 className="text-lg md:text-xl font-graduated tracking-wide text-white">{testimonial.name}</h4>
-                <div className="flex items-center justify-center gap-2 mt-2">
-                  <span className="text-xs text-muted-foreground">{testimonial.date}</span>
-                  <span className="w-1 h-1 bg-gingerbread rounded-none" />
-                  <span className="text-xs text-gingerbread font-medium tracking-widest uppercase">{testimonial.source}</span>
+                {/* Client Detail Info */}
+                <div className="pt-6 border-t border-white/5 w-full shrink-0">
+                  <h4 className="text-lg md:text-xl font-graduated tracking-wide text-white">{testimonial.name}</h4>
+                  <div className="flex items-center justify-center gap-2 mt-2">
+                    <span className="text-xs text-muted-foreground">{testimonial.date}</span>
+                    <span className="w-1 h-1 bg-[var(--gingerbread)] rounded-none" aria-hidden="true" />
+                    <span className="text-xs text-[var(--gingerbread)] font-medium tracking-widest uppercase">{testimonial.source}</span>
+                  </div>
                 </div>
-              </div>
 
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Navigasi Tombol Kiri / Kanan (Perubahan: Desain diubah menjadi rounded-none kotak tegas) */}
+      {/* Navigation Buttons - Left / Right */}
       <button 
-        onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 bg-black border border-white/10 hover:border-gingerbread text-white p-2.5 md:p-3 rounded-none hover:text-gingerbread transition-colors z-10 focus:outline-none"
+        onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 bg-black border border-white/10 hover:border-[var(--gingerbread)] text-white p-2.5 md:p-3 rounded-none hover:text-[var(--gingerbread)] transition-colors z-40 focus:outline-none cursor-pointer focus:ring-2 focus:ring-[var(--gingerbread)]/50"
         aria-label="Previous testimonial"
       >
         <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
       </button>
       
       <button 
-        onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 bg-black border border-white/10 hover:border-gingerbread text-white p-2.5 md:p-3 rounded-none hover:text-gingerbread transition-colors z-10 focus:outline-none"
+        onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 bg-black border border-white/10 hover:border-[var(--gingerbread)] text-white p-2.5 md:p-3 rounded-none hover:text-[var(--gingerbread)] transition-colors z-40 focus:outline-none cursor-pointer focus:ring-2 focus:ring-[var(--gingerbread)]/50"
         aria-label="Next testimonial"
       >
         <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
       </button>
 
-      {/* Indikator Titik Bawah (Perubahan: Diubah menjadi bar kotak minimalis) */}
-      <div className="flex justify-center gap-2 mt-8">
+      {/* Dot Indicators */}
+      <div className="flex justify-center gap-2 mt-8 relative z-40" role="tablist" aria-label="Testimonial page indicator">
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`transition-all duration-300 rounded-none h-1 ${
-              activeIndex === index 
-                ? "w-8 bg-gingerbread" 
-                : "w-3 bg-white/20 hover:bg-white/50"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
+            className={`transparent h-3 flex items-center justify-center cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--gingerbread)]/50`}
+            aria-label={`Go to slide ${index + 1} of ${testimonials.length}`}
+            aria-selected={activeIndex === index}
+            role="tab"
+          >
+            <span className={`transition-all duration-300 h-1 rounded-none ${
+              activeIndex === index ? "w-8 bg-[var(--gingerbread)]" : "w-3 bg-white/20"
+            }`} aria-hidden="true" />
+          </button>
         ))}
       </div>
     </div>
