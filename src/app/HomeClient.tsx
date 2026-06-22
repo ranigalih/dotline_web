@@ -42,13 +42,25 @@ const tattooServices = [
 
 export default function HomeClient() {
   const { isPlaying } = useAudio();
-  const [activeSlide, setActiveSlide] = useState(0);
+  // Right-side accordion active tab (5s auto-advance)
+  const [activeTab, setActiveTab] = useState(0);
+  // Left-side image index (3s auto-advance)
+  const [imageIndex, setImageIndex] = useState(0);
 
+  // Auto-advance the accordion tabs every 5 seconds
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((current) => (current + 1) % tattooServices.length);
-    }, 4000);
-    return () => clearInterval(timer);
+    const tabTimer = setInterval(() => {
+      setActiveTab((current) => (current + 1) % tattooServices.length);
+    }, 5000);
+    return () => clearInterval(tabTimer);
+  }, []);
+
+  // Auto-advance the left image preview every 3 seconds
+  useEffect(() => {
+    const imageTimer = setInterval(() => {
+      setImageIndex((current) => (current + 1) % tattooServices.length);
+    }, 3000);
+    return () => clearInterval(imageTimer);
   }, []);
 
   return (
@@ -111,23 +123,22 @@ export default function HomeClient() {
             <div className="w-full lg:w-5/12 relative group order-2 lg:order-1">
               <div className="relative aspect-square md:aspect-4/5 w-full overflow-hidden border border-white/10 rounded-sm lg:rounded-none">
                 <div 
-                  className="flex w-full h-full transition-transform duration-1000"
-                  style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                  className="relative w-full h-full"
                   role="region"
-                  aria-label={`Service showcase: ${tattooServices[activeSlide].title}`}
+                  aria-label={`Service showcase: ${tattooServices[imageIndex].title}`}
                   aria-live="polite"
                 >
                   {tattooServices.map((service, index) => (
-                    <div key={service.id} className="min-w-full h-full relative">
-                      <img 
-                        src={service.image} 
-                        alt={`${service.title} Tattoo - Premium Traditional and Modern Ink at Dotlinetattu Bali Studio`} 
-                        className={`object-cover w-full h-full transition-all duration-2000 ${activeSlide === index ? 'grayscale-0 scale-100' : 'grayscale scale-110'}`}
-                        loading={index === 0 ? "eager" : "lazy"}
-                      />
-                      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent opacity-90" />
-                    </div>
+                    <img
+                      key={service.id}
+                      src={service.image}
+                      alt={`${service.title} Tattoo - Premium Traditional and Modern Ink at Dotlinetattu Bali Studio`}
+                      aria-hidden={imageIndex !== index}
+                      className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-500 ease-in-out ${imageIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
                   ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90" />
                 </div>
               </div>
             </div>
@@ -150,20 +161,20 @@ export default function HomeClient() {
                     key={service.id}
                     type="button"
                     role="tab"
-                    aria-selected={activeSlide === index}
-                    onClick={() => setActiveSlide(index)}
+                    aria-selected={activeTab === index}
+                    onClick={() => setActiveTab(index)}
                     className={`w-full text-left p-4 rounded-sm border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gingerbread/50 ${
-                      activeSlide === index
+                      activeTab === index
                         ? 'border-gingerbread bg-gingerbread/15 text-gingerbread shadow-[0_0_0_1px_rgba(216,104,58,0.45)]'
                         : 'border-white/10 text-white hover:border-gingerbread hover:text-gingerbread hover:bg-white/5'
                     }`}
-                    aria-label={`${service.title} service tab${activeSlide === index ? ', active' : ''}`}
+                    aria-label={`${service.title} service tab${activeTab === index ? ', active' : ''}`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-lg font-graduated tracking-[0.15em] uppercase">{service.title}</span>
-                      <span className={`h-2 w-2 rounded-full transition-colors duration-300 ${activeSlide === index ? 'bg-gingerbread' : 'bg-white/20'}`} />
+                      <span className={`h-2 w-2 rounded-full transition-colors duration-300 ${activeTab === index ? 'bg-gingerbread' : 'bg-white/20'}`} />
                     </div>
-                    {activeSlide === index && <p className="text-xs text-gingerbread mt-3 leading-relaxed">{service.description}</p>}
+                    {activeTab === index && <p className="text-xs text-gingerbread mt-3 leading-relaxed">{service.description}</p>}
                   </button>
                 ))}
               </div>

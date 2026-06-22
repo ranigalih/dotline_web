@@ -27,10 +27,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-24 flex items-center pointer-events-auto ${
-        isScrolled
-          ? "bg-black/95 backdrop-blur-md border-b border-white/10"
-          : "bg-transparent"
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 h-24 flex items-center pointer-events-auto bg-black ${
+        isScrolled ? "border-b border-white/10 backdrop-blur-md" : ""
       }`}
       aria-label="Main Navigation"
     >
