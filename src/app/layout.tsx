@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali. Expert traditional tattoo artist Silver Jerry brings authentic cultural tattoo art to life.',
   keywords: ['tattoo bali', 'handpoke tattoo', 'balinese tattoo', 'traditional handtapping', 'premium tattoo studio', 'canggu tattoo', 'bali tattoo artist', 'custom tattoo'],
   icons: {
-    icon: '/Icon.png',
-    shortcut: '/Icon.png',
-    apple: '/Icon.png',
+    icon: '/favicon-dark.png',
+    shortcut: '/favicon-dark.png',
+    apple: '/favicon-dark.png',
     other: [
       {
         rel: 'manifest',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: 'https://dotlinetattuhandpokebali.com',
     images: [
       {
-        url: '/Icon.png',
+        url: '/favicon-dark.png',
         width: 1200,
         height: 1200,
         alt: 'Dotlinetattu Sacred Ornament Logo - Premium Tattoo Studio Bali',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Premium Tattoo Studio Bali | Dotlinetattu Handpoke & Traditional Ink',
     description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali.',
-    images: ['/Icon.png'],
+    images: ['/favicon-dark.png'],
   },
   robots: {
     index: true,
