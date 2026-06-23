@@ -13,7 +13,7 @@ const graduatedFont = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dotlinetattuhandpokebali.com'),
-  title: 'Premium Tattoo Studio Bali | Dotlinetattu Handpoke & Traditional Ink',
+  title: 'Dotlinetattu Handpoke Bali',
   description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali. Expert traditional tattoo artist Silver Jerry brings authentic cultural tattoo art to life.',
   keywords: ['tattoo bali', 'handpoke tattoo', 'balinese tattoo', 'traditional handtapping', 'premium tattoo studio', 'canggu tattoo', 'bali tattoo artist', 'custom tattoo'],
   icons: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Premium Tattoo Studio Bali | Dotlinetattu Handpoke & Traditional Ink',
+    title: 'Dotlinetattu Handpoke Bali',
     description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali.',
     type: 'website',
     siteName: 'Dotlinetattu',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Premium Tattoo Studio Bali | Dotlinetattu Handpoke & Traditional Ink',
+    title: 'Dotlinetattu Handpoke Bali',
     description: 'Experience premium handpoke, traditional Balinese handtapping, and modern custom tattoos at Dotlinetattu in Canggu, Ubud, Uluwatu, and Denpasar, Bali.',
     images: ['/favicon-dark.png'],
   },
