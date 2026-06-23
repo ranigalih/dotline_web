@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://dotlinetattuhandpokebali.com/',
+    canonical: 'https://dotlinetattuhandpokebali.com',
   },
 };
 
