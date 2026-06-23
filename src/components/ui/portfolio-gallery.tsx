@@ -18,23 +18,6 @@ const portfolioItems = [
 
 export function PortfolioGallery() {
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const filters = [
-    { id: "all", label: "ALL" },
-    { id: "handpoke", label: "HANDPOKE" },
-    { id: "traditional", label: "TRADITIONAL INK" },
-    { id: "machine", label: "MACHINE WORK" },
-  ];
-
-  const filteredItems = activeFilter === "all"
-    ? portfolioItems
-    : portfolioItems.filter((item) => {
-        if (activeFilter === "handpoke") return item.alt.toLowerCase().includes("handpoke");
-        if (activeFilter === "traditional") return item.alt.toLowerCase().includes("traditional");
-        if (activeFilter === "machine") return item.alt.toLowerCase().includes("machine");
-        return true;
-      });
 
   return (
     <div className="font-graduated">
@@ -43,29 +26,11 @@ export function PortfolioGallery() {
         <div className="px-8 py-2.5 text-xs tracking-[0.2em] uppercase border border-gingerbread bg-gingerbread text-white font-medium select-none">
           GALLERY
         </div>
-        <div className="flex flex-wrap justify-center gap-3">
-          {filters.map((filter) => (
-            <button
-              key={filter.id}
-              type="button"
-              onClick={() => setActiveFilter(filter.id)}
-              className={`rounded-none border px-4 py-2 text-xs tracking-[0.2em] uppercase transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gingerbread/50 ${
-                activeFilter === filter.id
-                  ? 'bg-gingerbread border-gingerbread text-black'
-                  : 'border-white/20 text-white hover:border-gingerbread hover:text-gingerbread hover:bg-white/5'
-              }`}
-              aria-pressed={activeFilter === filter.id}
-              aria-label={`Filter portfolio by ${filter.label}`}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* Portfolio Grid */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-        {filteredItems.map((item, index) => (
+        {portfolioItems.map((item) => (
           <div 
             key={item.id} 
             className="break-inside-avoid relative group cursor-pointer overflow-hidden border border-white/10 bg-zinc-900 transition-all duration-300"
