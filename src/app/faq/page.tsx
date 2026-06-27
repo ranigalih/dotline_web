@@ -125,7 +125,7 @@ export default function FAQPage() {
             {/* Label Interaktif Pojok Peta */}
             <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <a 
-                href="https://maps.app.goo.gl/pkpmXJHmPdj2Ahw79" 
+                href="https://maps.google.com/?cid=12140417931302492237" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-black/80 backdrop-blur-md border border-gingerbread/50 text-gingerbread text-[10px] px-3 py-1.5 tracking-widest uppercase hover:bg-gingerbread hover:text-white transition-all"
