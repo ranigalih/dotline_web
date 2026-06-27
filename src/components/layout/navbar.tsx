@@ -33,7 +33,7 @@ export function Navbar() {
       aria-label="Main Navigation"
     >
       {/* Container: Navbar held at max height to prevent overflow blocking clicks below */}
-      <div className="w-full h-full px-6 sm:px-8 lg:px-12 flex items-center justify-between relative max-h-24 overflow-visible pointer-events-none">
+      <div className="w-full h-full px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between gap-3 relative max-h-24 overflow-visible pointer-events-none">
         
         {/* Left Side: Logo Sacred Ornament (Design Preserved) */}
         <Link 
@@ -51,8 +51,8 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Right Side: Desktop Navigation Menu & Booking Button (FORCED HORIZONTAL TO PREVENT DROPDOWN) */}
-        <div className="hidden lg:flex flex-row items-center gap-6 xl:gap-10 h-full pointer-events-auto">
+        {/* Right Side: Desktop Navigation Menu & Booking Button */}
+        <div className="hidden md:flex flex-row items-center gap-6 xl:gap-10 h-full pointer-events-auto">
           <div className="flex flex-row items-center gap-5 xl:gap-8">
             {navLinks.map((link) => (
               <Link
@@ -78,7 +78,7 @@ export function Navbar() {
 
         {/* Mobile Hamburger Menu Button */}
         <button
-          className="lg:hidden text-white focus:outline-none z-50 p-2 pointer-events-auto hover:text-(--gingerbread) transition-colors duration-200"
+          className="md:hidden inline-flex items-center justify-center text-white focus:outline-none z-50 p-2 ml-auto pointer-events-auto hover:text-(--gingerbread) transition-colors duration-200"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
           aria-expanded={mobileMenuOpen}
@@ -91,7 +91,7 @@ export function Navbar() {
       {/* Mobile Menu Dropdown Panel */}
       {mobileMenuOpen && (
         <div 
-          className="lg:hidden absolute top-full left-0 w-full bg-black/98 backdrop-blur-lg border-b border-white/10 py-6 px-6 flex flex-col gap-4 animate-in slide-in-from-top-2 duration-200 pointer-events-auto"
+          className="md:hidden absolute top-full left-0 w-full bg-black/98 backdrop-blur-lg border-b border-white/10 py-6 px-6 flex flex-col gap-4 animate-in slide-in-from-top-2 duration-200 pointer-events-auto"
           id="mobile-menu"
           role="menu"
         >
